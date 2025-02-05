@@ -2,33 +2,51 @@ import { useEffect, useState } from "react";
 import Header from "./Components/Header";
 import ContactBar from "./Components/ContactBar";
 import "./index.css";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Home from "./Components/Home";
 import Projects from "./Components/Projects";
+
 function App() {
   const [windowTop, setWindowTop] = useState(true);
-  const navLinks = ["", "projects", "experience", "skills"];
-  const location = useLocation();
-  
+  const [active, setActive] = useState("");
 
+  // Detects if user is at the top of the page
   useEffect(() => {
     const handleScrollTop = () => {
-      if (window.scrollY === 0) {
-        setWindowTop(true);
-      } else {
-        setWindowTop(false);
-      }
+      setWindowTop(window.scrollY === 0);
     };
     window.addEventListener("scroll", handleScrollTop);
     return () => {
       window.removeEventListener("scroll", handleScrollTop);
     };
-  });
+  }, []);
+
+  // Detects which section is active
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.8 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
   return (
     <div className={`flex-col min-h-screen ${!windowTop ? "mt-18" : ""}`}>
-      <Header windowTop={windowTop} />
+      <Header windowTop={windowTop} activeSection={active} />
       <Home />
-      <Projects/>
+      <Projects />
       <ContactBar />
     </div>
   );

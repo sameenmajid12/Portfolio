@@ -1,11 +1,10 @@
 import { act, useEffect, useState } from "react";
 import "../index.css";
 import { useLocation, useNavigate } from "react-router-dom";
-function Header({windowTop}) {
-  const [active, setActive] = useState(location.pathname.split("/")[1] || "");
+function Header({windowTop, activeSection}) {
 
   const checkActive=(route)=>{
-    if(active===route){
+    if(activeSection===route){
       return true;
     }
     return false;
@@ -16,22 +15,25 @@ function Header({windowTop}) {
       <img className="w-auto h-6" src="/assets/logo.png"></img>
       <div className="text-primary flex text-l gap-x-5">
         <div
-          onClick={() => navToSection("")}
+        
           className={`relative cursor-pointer ${checkActive('')? "font-bold" : ""}`}
         >
-          Home
-          {checkActive('')?selectorLine:''}
+          <a href="#home">Home</a>
+          
+          {checkActive('home')?selectorLine:''}
         </div>
         <div
-          onClick={() => navToSection("")}
-          className={`cursor-pointer ${
-            active === "projects" ? "font-bold" : ""
+
+          className={` relative cursor-pointer ${
+            checkActive("projects") ? "font-bold" : ""
           }`}
         >
-          Projects
+          <a href="#projects">Projects</a>
+
+          {checkActive('projects')?selectorLine:''}
         </div>
         <div
-          onClick={() => navToSection("experience")}
+
           className={`relative cursor-pointer ${
             checkActive('experience') ? "font-bold" : ""
           }`}
@@ -40,7 +42,7 @@ function Header({windowTop}) {
           {checkActive('experience')?selectorLine:''}
         </div>
         <div
-          onClick={() => navToSection("skills")}
+  
           className={`relative cursor-pointer ${checkActive('skills') ? "font-bold" : ""}`}
         >
           Skills
