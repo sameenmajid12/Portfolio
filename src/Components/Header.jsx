@@ -2,21 +2,14 @@ import { act, useEffect, useState } from "react";
 import "../index.css";
 import { useLocation, useNavigate } from "react-router-dom";
 function Header({windowTop}) {
-  const location = useLocation();
   const [active, setActive] = useState(location.pathname.split("/")[1] || "");
-  const navigate = useNavigate();
-  const navToSection = (route) => {
-    navigate(`${route}`);
-  };
+
   const checkActive=(route)=>{
     if(active===route){
       return true;
     }
     return false;
   }
-  useEffect(() => {
-    setActive(location.pathname.split("/")[1] || "");
-  }, [location]);
   const selectorLine = <span className="animate-slide-up bottom-[-5px] right-1/2 transform -translate-x-[-50%] absolute w-3.75 h-0.75 rounded bg-black"></span>;
   return (
     <div className={`flex justify-between pr-50 pl-50 h-18 items-center ${!windowTop?'bg-white shadow-md fixed top-0 right-0 left-0 z-110':'relative shadow-none bg-transparent'}`}>
