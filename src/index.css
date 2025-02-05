@@ -11,7 +11,8 @@
 }
 html{
   font-family: 'Inria Sans';
-  color:#313131
+  color:#313131;
+  scroll-behavior: smooth;
 }
 body{
   background-color: #EFEFEF;
@@ -24,6 +25,17 @@ html, body, #root {
   0% { transform: translateY(0px); opacity: 0.8; }
   50% { transform: translateY(-15px); opacity: 0.4; }
   100% { transform: translateY(0px); opacity: 0.8; }
+}
+@keyframes floatbar {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(15px);
+  }
+  100%{
+    transform: translateY(0);
+  }
 }
 @keyframes slideUp {
   0%{
