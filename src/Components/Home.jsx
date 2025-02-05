@@ -19,7 +19,7 @@ function Home(){
     generateParticles();
   }, []);
   return(
-  <div className="flex pl-50 pr-50 pt-3 pb-3 w-full min-h-[calc(100dvh-72px-72px-78px)] gap-x-5 items-center">
+  <div className="flex pl-50 pr-50 pt-3 pb-3 w-full min-h-[calc(100dvh-72px)] pb-[calc(72px+78px)] gap-x-5 items-center">
     <div className={"absolute top-0 bottom-0 right-0 left-0 pointer-events-none z-0"}>
         {particles.map((particle) => (
           <div
