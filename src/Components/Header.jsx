@@ -19,7 +19,7 @@ function Header({windowTop}) {
   }, [location]);
   const selectorLine = <span className="animate-slide-up bottom-[-5px] right-1/2 transform -translate-x-[-50%] absolute w-3.75 h-0.75 rounded bg-black"></span>;
   return (
-    <div className={`flex justify-between pr-50 pl-50 pt-6 pb-6 ${!windowTop?'bg-white shadow-md fixed top-0 right-0 left-0':''}`}>
+    <div className={`flex justify-between pr-50 pl-50 h-18 items-center ${!windowTop?'bg-white shadow-md fixed top-0 right-0 left-0 z-110':'relative shadow-none bg-transparent'}`}>
       <img className="w-auto h-6" src="/assets/logo.png"></img>
       <div className="text-primary flex text-l gap-x-5">
         <div

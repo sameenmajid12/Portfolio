@@ -3,6 +3,11 @@
   --color-primary:#313131;
   --color-primary-hover: #444444;
   --animate-slide-up:slideUp 0.25s ease;
+  --color-myRed:#FF6868;
+  --color-myGreen:#5AFF8C;
+  --color-myPurple:#A75FFF;
+  --spacing-header: h-18;
+  --animate-float:float ease-in-out infinite
 }
 html{
   font-family: 'Inria Sans';
@@ -10,6 +15,15 @@ html{
 }
 body{
   background-color: #EFEFEF;
+  min-height: 100dvh;
+}
+html, body, #root {
+  height: 100%;
+}
+@keyframes float {
+  0% { transform: translateY(0px); opacity: 0.8; }
+  50% { transform: translateY(-15px); opacity: 0.4; }
+  100% { transform: translateY(0px); opacity: 0.8; }
 }
 @keyframes slideUp {
   0%{

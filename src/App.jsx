@@ -6,10 +6,10 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   const [windowTop, setWindowTop] = useState(true);
-  const [count, setCount] = useState(0);
   const handleScrollTop = () => {
-    if (window.scroll === 0) {
+    if (window.scrollY === 0) {
       setWindowTop(true);
+      
     } else {
       setWindowTop(false);
     }
@@ -21,11 +21,11 @@ function App() {
     };
   });
   return (
-    <>
+    <div className={`flex-col min-h-screen ${!windowTop?'mt-18':''}`}>
       <Header windowTop={windowTop}/>
       <Outlet/>
       <ContactBar />
-    </>
+    </div>
   );
 }
 
