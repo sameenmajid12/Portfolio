@@ -1,12 +1,23 @@
+import { motion } from "framer-motion";
+
 function Projects() {
   return (
-    <section id="projects" className="min-h-[calc(100dvh-72px)] px-50 py-10 flex flex-col gap-y-10">
+    <section
+      id="projects"
+      className="min-h-[calc(100dvh-72px)] px-50 py-10 flex flex-col gap-y-10"
+    >
       <div className="w-max relative text-5xl font-bold">
         <span className=" w-[67%] h-[65%] right-[-5px] bottom-[-5px] absolute bg-gradient-to-l to-[#F2D4D4] from-[#F5B9B9] z-10 opacity-70"></span>
         <h1 className="z-20 relative">My Projects.</h1>
       </div>
       <div className="grid grid-cols-1 gap-y-10">
-        <div className="bg-white w-full h-50 flex gap-x-5 p-5 rounded-xl relative">
+        <motion.div
+          initial={{ opacity: 0}} 
+          whileInView={{ opacity: 1}} 
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="cursor-pointer bg-white w-full h-50 flex gap-x-5 p-5 rounded-xl relative hover:shadow-sm transition-all duration-200"
+        >
           <img
             className="rounded-sm border border-[rgba(0,0,0,0.10)]"
             src="/assets/LumeSS.png"
@@ -30,18 +41,18 @@ function Projects() {
               </p>
             </div>
 
-            <div className="flex items-center gap-x-3 ">
+            <div className="flex items-center gap-x-2">
               <i class="fa-solid fa-screwdriver-wrench text-[#FF6868]"></i>
-              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-sm">
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
                 React.js
               </button>
-              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-sm">
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
                 Express.js
               </button>
-              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-sm">
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
                 Node.js
               </button>
-              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-sm">
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
                 MongoDB
               </button>
               <p className="text-[#FF6868]">& more</p>
@@ -50,8 +61,14 @@ function Projects() {
           <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold">
             In Progress
           </span>
-        </div>{" "}
-        <div className="bg-white w-full h-50 flex gap-x-5 p-6 rounded-xl relative cursor-pointer">
+        </motion.div>{" "}
+        <motion.div
+          initial={{ opacity: 0}} 
+          whileInView={{ opacity: 1}} 
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="cursor-pointer bg-white w-full h-50 flex gap-x-5 p-5 rounded-xl relative hover:shadow-sm transition-all duration-200"
+        >
           <img
             className="rounded-sm border border-[rgba(0,0,0,0.10)]"
             src="/assets/NestFramesSS.png"
@@ -83,18 +100,18 @@ function Projects() {
               </p>
             </div>
 
-            <div className="flex items-center gap-x-3 ">
+            <div className="flex items-center gap-x-2">
               <i class="fa-solid fa-screwdriver-wrench text-[#FF6868]"></i>
-              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-md">
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
                 React.js
               </button>
-              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-md">
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
                 Express.js
               </button>
-              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-md">
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
                 Node.js
               </button>
-              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-md">
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
                 MongoDB
               </button>
               <p className="text-[#FF6868]">& more</p>
@@ -103,6 +120,13 @@ function Projects() {
           <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold">
             In Progress
           </span>
+        </motion.div>
+        <div className="flex justify-center text-xl font-bold items-center pb-5">
+          <div className="relative pr-2">
+            Stay tuned for more!
+            <span className="w-[30%] absolute h-[3px] bg-[#FF6868] rounded-md bottom-[-2px] left-0"></span>
+          </div>
+          <i className="fa-solid fa-folder-open text-[#FF6868]"></i>
         </div>
       </div>
     </section>

@@ -42,7 +42,7 @@ function Home(){
         <h2 className="text-xl">Welcome to my portfolio! Explore how I combine creativity with functionality to bring ideas to life.</h2>
       </div>
       <div className="flex gap-x-[15px]">
-        <button className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white  hover:bg-black hover: transition-all duration-150">Projects</button>
+        <a href="#projects"><button className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white  hover:bg-black hover: transition-all duration-150">Projects</button></a>
         <button className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white hover:bg-black  transition-all duration-150">Experience</button>
         <button className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white hover:bg-black  transition-all duration-150">Skills</button>
       </div>
