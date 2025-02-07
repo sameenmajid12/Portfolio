@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function Projects() {
+  const navigate = useNavigate();
+  const navToProject=(route)=>{
+    navigate(`${route}`)
+  }
   return (
     <section
       id="projects"
@@ -11,12 +16,13 @@ function Projects() {
         <h1 className="z-20 relative">My Projects.</h1>
       </div>
       <div className="grid grid-cols-1 gap-y-10">
+        <a href="https://github.com/Saminraiyan12/Lume" target="_blank" rel="noopener noreferrer">
         <motion.div
           initial={{ opacity: 0}} 
           whileInView={{ opacity: 1}} 
           transition={{ duration: 1 }}
           viewport={{ once: true, amount: 0.5 }}
-          className="cursor-pointer bg-white w-full h-50 flex gap-x-5 p-5 rounded-xl relative hover:shadow-sm transition-all duration-200"
+          className="cursor-pointer bg-white w-full h-50 flex gap-x-5 p-5 rounded-xl relative hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all"
         >
           <img
             className="rounded-sm border border-[rgba(0,0,0,0.10)]"
@@ -61,13 +67,14 @@ function Projects() {
           <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold">
             In Progress
           </span>
-        </motion.div>{" "}
+        </motion.div>
+        </a>
         <motion.div
           initial={{ opacity: 0}} 
           whileInView={{ opacity: 1}} 
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.3 }}
-          className="cursor-pointer bg-white w-full h-50 flex gap-x-5 p-5 rounded-xl relative hover:shadow-sm transition-all duration-200"
+          className="cursor-pointer bg-white w-full h-50 flex gap-x-5 p-5 rounded-xl relative hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all duration-200"
         >
           <img
             className="rounded-sm border border-[rgba(0,0,0,0.10)]"
@@ -119,6 +126,54 @@ function Projects() {
           </div>
           <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold">
             In Progress
+          </span>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0}} 
+          whileInView={{ opacity: 1}} 
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="cursor-pointer bg-white w-full h-50 flex gap-x-5 p-5 rounded-xl relative hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all duration-200"
+        >
+          <img
+            className="rounded-sm border border-[rgba(0,0,0,0.10)] min-w-[324px] object-cover"
+            src="/assets/InterModalSS.png"
+          ></img>
+          <div className="flex flex-col justify-between">
+            <div>
+              <h2 className="flex gap-x-2 font-bold text-2xl items-center pb-1">
+                InterModal
+                <i className="fa-solid fa-train-subway text-[#313131]"></i>
+              </h2>
+              <p className="text-m text-[#6F6F6F]">
+              Intermodal is an <span className="font-bold">iOS application</span> designed to revolutionize trip 
+              planning by allowing users to calculate routes with <span className="font-bold">unlimited stops 
+              and different modes of transportation</span> between each one. Unlike traditional 
+              mapping solutions, Intermodal provides a seamless way to <span className="font-bold">combine transit options, 
+              such as trains, buses, and personal transport,</span> for a more accurate and 
+              flexible travel plan.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-x-2">
+              <i class="fa-solid fa-screwdriver-wrench text-[#FF6868]"></i>
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
+                Swift
+              </button>
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
+                SwiftUI
+              </button>
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
+                Firebase
+              </button>
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
+                XCode
+              </button>
+              <p className="text-[#FF6868]">& more</p>
+            </div>
+          </div>
+          <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold">
+            Submitted to HackRU Fall 2024
           </span>
         </motion.div>
         <div className="flex justify-center text-xl font-bold items-center pb-5">
