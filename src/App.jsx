@@ -4,6 +4,9 @@ import ContactBar from "./Components/ContactBar";
 import "./index.css";
 import Home from "./Components/Home";
 import Projects from "./Components/Projects";
+import Experience from "./Components/Experience";
+import Skills from "./Components/Skills";
+import Footer from "./Components/Footer";
 
 function App() {
   const [windowTop, setWindowTop] = useState(true);
@@ -47,6 +50,9 @@ function App() {
       <Header windowTop={windowTop} activeSection={active} />
       <Home />
       <Projects />
+      <Experience/>
+      <Skills/>
+      <Footer/>
       <ContactBar />
     </div>
   );

@@ -9,11 +9,11 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-[calc(100dvh-72px)] px-50 py-10 flex flex-col gap-y-10"
+      className="min-h-[calc(100dvh-var(--spacing-header))] px-50 py-10 flex flex-col gap-y-10"
     >
       <div className="w-max relative text-5xl font-bold">
         <span className=" w-[67%] h-[65%] right-[-5px] bottom-[-5px] absolute bg-gradient-to-l to-[#F2D4D4] from-[#F5B9B9] z-10 opacity-70"></span>
-        <h1 className="z-20 relative">My Projects.</h1>
+        <h1 className="z-20 relative">Projects.</h1>
       </div>
       <div className="grid grid-cols-1 gap-y-10">
         <a href="https://github.com/Saminraiyan12/Lume" target="_blank" rel="noopener noreferrer">
@@ -61,7 +61,15 @@ function Projects() {
               <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
                 MongoDB
               </button>
-              <p className="text-[#FF6868]">& more</p>
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
+                Figma
+              </button>
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
+                UI/UX Design
+              </button>
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
+                REST APIs
+              </button>
             </div>
           </div>
           <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold">
@@ -121,7 +129,18 @@ function Projects() {
               <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
                 MongoDB
               </button>
-              <p className="text-[#FF6868]">& more</p>
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
+                Websockets
+              </button>
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
+                UI/UX Design
+              </button>
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
+                REST APIs
+              </button>
+              <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
+                AWS
+              </button>
             </div>
           </div>
           <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold">
@@ -169,7 +188,6 @@ function Projects() {
               <button className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full">
                 XCode
               </button>
-              <p className="text-[#FF6868]">& more</p>
             </div>
           </div>
           <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold">
