@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 function Experience() {
   return (
     <section
@@ -8,7 +9,13 @@ function Experience() {
         <span className=" w-[70%] h-[70%] right-[-5px] bottom-[-5px] absolute bg-gradient-to-l to-[#E5DCF1] from-[#DECFF3] z-10"></span>
         <h1 className="z-20 relative">Experience.</h1>
       </div>
-      <div className="bg-white w-full py-5 px-5 flex gap-x-10 rounded-2xl">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        className="bg-white w-full py-5 px-5 flex gap-x-10 rounded-2xl"
+      >
         <p className="text-m whitespace-nowrap">November 2024-Present</p>
         <div className="flex flex-col">
           <h3 className="text-2xl font-bold items-center flex gap-x-3 pb-1">
@@ -65,21 +72,28 @@ function Experience() {
             src="/assets/humun_logo.jpg"
           ></img>
         </div>
-      </div>
-      <a
-        href="https://www.linkedin.com/in/sameen-majid-8b31591ba/"
-        target="_blank"
-        rel="noopener noreferrer"
+      </motion.div>
+      <motion.div
+        initial={{ transform: 'translateX(100px)', opacity: 0 }}
+        whileInView={{ transform: 'translateX(0px)', opacity: 1 }}
+        transition={{duration:0.5}}
+        viewport={{once:true,amount:1}}
       >
-        <div className="flex justify-center w-full items-center gap-x-3 group cursor-pointer">
-          <p className="font-bold text-[#6F6F6F] group-hover:text-[#313131]">
-            I’m always looking for the next opportunity to apply my skills.
-            Let’s get in touch and discuss how I can help bring your project to
-            life!
-          </p>
-          <i className="fa-brands fa-linkedin text-2xl text-[#D3AFFF] group-hover:text-[#A75FFF]"></i>
-        </div>
-      </a>
+        <a
+          href="https://www.linkedin.com/in/sameen-majid-8b31591ba/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="flex justify-center w-full items-center gap-x-3 group cursor-pointer">
+            <p className="font-bold text-[#6F6F6F] group-hover:text-[#313131]">
+              I’m always looking for the next opportunity to apply my skills.
+              Let’s get in touch and discuss how I can help bring your project
+              to life!
+            </p>
+            <i className="fa-brands fa-linkedin text-2xl text-[#D3AFFF] group-hover:text-[#A75FFF]"></i>
+          </div>
+        </a>
+      </motion.div>
     </section>
   );
 }

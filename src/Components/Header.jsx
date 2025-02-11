@@ -1,23 +1,6 @@
 import "../index.css";
-function Header({ windowTop, activeSection }) {
-  const checkActive = (route) => {
-    if (activeSection === route) {
-      return true;
-    }
-    return false;
-  };
-  const scrollToSection = (sectionId) => {
-    console.log(sectionId);
-    const section = document.getElementById(sectionId);
-    console.log(section.offsetTop + 72);
-    if(!checkActive(sectionId)){
-      window.scrollTo({
-        top: section.offsetTop - 72,
-        behavior: "smooth",
-      });
-    }
-    
-  };
+function Header({ windowTop,scrollToSection,checkActive }) {
+  
   const selectorLine = (
     <span className="animate-slide-up bottom-[-5px] right-1/2 transform -translate-x-[-50%] absolute w-3.75 h-0.75 rounded bg-black"></span>
   );
@@ -68,7 +51,7 @@ function Header({ windowTop, activeSection }) {
             checkActive("skills") ? "font-bold" : ""
           }`}
         >
-          Skills
+          <a onClick={()=>scrollToSection('skills')}>Skills</a>
           {checkActive("skills") ? selectorLine : ""}
         </div>
       </div>

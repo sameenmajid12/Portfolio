@@ -44,10 +44,26 @@ function App() {
       sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
-
+  const checkActive = (route) => {
+    if (active === route) {
+      return true;
+    }
+    return false;
+  };
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if(!checkActive(sectionId)){
+      window.scrollTo({
+        top: section.offsetTop - 72,
+        behavior: "smooth",
+      });
+    }
+    
+  };
+  
   return (
     <div className={`flex-col min-h-screen ${!windowTop ? "mt-18" : ""}`}>
-      <Header windowTop={windowTop} activeSection={active} />
+      <Header windowTop={windowTop} scrollToSection={scrollToSection} checkActive={checkActive}/>
       <Home />
       <Projects />
       <Experience/>

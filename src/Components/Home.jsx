@@ -17,6 +17,7 @@ function Home() {
 
     generateParticles();
   }, []);
+  
   return (
     <section
       id="home"
