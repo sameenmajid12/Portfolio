@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-function Home() {
+function Home({ scrollToSection }) {
   const [particles, setParticles] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function Home() {
 
     generateParticles();
   }, []);
-  
+
   return (
     <section
       id="home"
@@ -54,15 +54,14 @@ function Home() {
           </h2>
         </div>
         <div className="flex gap-x-[15px]">
-          <a href="#projects">
-            <button className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white  hover:bg-black hover: transition-all duration-150">
-              Projects
-            </button>
-          </a>
-          <button className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white hover:bg-black  transition-all duration-150">
+          <button onClick={()=>scrollToSection("projects")} className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white  hover:bg-black hover: transition-all duration-150">
+            Projects
+          </button>
+
+          <button onClick={()=>scrollToSection("experience")} className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white hover:bg-black  transition-all duration-150">
             Experience
           </button>
-          <button className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white hover:bg-black  transition-all duration-150">
+          <button onClick={()=>scrollToSection("skills")} className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white hover:bg-black  transition-all duration-150">
             Skills
           </button>
         </div>

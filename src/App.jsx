@@ -11,8 +11,7 @@ import Footer from "./Components/Footer";
 function App() {
   const [windowTop, setWindowTop] = useState(true);
   const [active, setActive] = useState("");
-
-  // Detects if user is at the top of the page
+  const [screenSize, setScreenSize] = useState(false);
   useEffect(() => {
     const handleScrollTop = () => {
       setWindowTop(window.scrollY === 0);
@@ -23,10 +22,8 @@ function App() {
     };
   }, []);
 
-  // Detects which section is active
   useEffect(() => {
     const sections = document.querySelectorAll("section");
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -35,7 +32,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.8 }
+      { threshold: 0.2 }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -64,7 +61,7 @@ function App() {
   return (
     <div className={`flex-col min-h-screen ${!windowTop ? "mt-18" : ""}`}>
       <Header windowTop={windowTop} scrollToSection={scrollToSection} checkActive={checkActive}/>
-      <Home />
+      <Home scrollToSection={scrollToSection}/>
       <Projects />
       <Experience/>
       <Skills/>
