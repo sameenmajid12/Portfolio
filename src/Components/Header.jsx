@@ -62,7 +62,7 @@ function Header({ windowTop, scrollToSection, checkActive }) {
           <i  onClick={toggleMenu} className="fa-solid fa-bars"></i>
         </div>
       </div>
-      {menuVisibility && <HeaderMenu toggleVisibility={toggleMenu}/>}
+      {menuVisibility && <HeaderMenu toggleVisibility={toggleMenu} scrollToSection={scrollToSection}/>}
     </>
   );
 }
