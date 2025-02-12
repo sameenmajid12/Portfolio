@@ -55,15 +55,15 @@ function Skills() {
         {skillCategories.map((category, index) => (
           <div key={index}>
             <h2 className="font-bold">{category.category}</h2>
-            <div className="grid grid-cols-[repeat(auto-fit,200px)] gap-x-15 gap-y-10">
+            <div className="grid grid-cols-[repeat(auto-fit,clamp(8rem,17.5vw,12.5rem))] gap-x-[clamp(2.5rem,4vw,4rem)] gap-y-[clamp(1.5rem,4vw,2.5rem)]">
               {category.skills.map((skill, skillIndex) => (
                 <div
                   key={skillIndex}
-                  className="h-[250px] w-[200px] flex flex-col bg-white rounded-2xl shadow-[0px_15px_15px_rgba(255,104,104,0.15)] overflow-hidden items-center"
+                  className="h-[clamp(10rem,17.5vw,15.625rem)] w-[clamp(8rem,17.5vw,12.5rem)] flex flex-col bg-white rounded-2xl shadow-[0px_15px_15px_rgba(255,104,104,0.15)] overflow-hidden items-center"
                 >
                   <div className="flex-1 flex justify-center">
                     <img
-                      className="object-contain w-[70px]"
+                      className="object-contain w-[clamp(3.75rem,10vw,4.25rem)]"
                       src={skill.image}
                       alt={skill.name}
                     />
