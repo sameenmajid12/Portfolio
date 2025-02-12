@@ -9,6 +9,7 @@
   --color-bgColor:#efefef;
   --spacing-header: 72px;
   --animate-float:float ease-in-out infinite;
+  --animate-slide-in:slideIn 0.5s ease;
 }
 html{
   font-family: 'Inria Sans';
@@ -51,5 +52,13 @@ html, body, #root {
   }
   100%{
     transform: translateY(0);
+  }
+}
+@keyframes slideIn{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(0);
   }
 }

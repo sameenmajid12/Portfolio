@@ -59,7 +59,7 @@ function App() {
   };
   
   return (
-    <div className={`flex-col min-h-screen ${!windowTop ? "mt-18" : ""}`}>
+    <div className={`flex-col min-h-screen ${!windowTop ? "mt-[72px]" : ""}`}>
       <Header windowTop={windowTop} scrollToSection={scrollToSection} checkActive={checkActive}/>
       <Home scrollToSection={scrollToSection}/>
       <Projects />
