@@ -57,23 +57,23 @@ function Home({ scrollToSection }) {
             functionality to bring ideas to life.
           </h2>
         </div>
-        <div className="flex gap-x-[15px] justify-center">
+        <div className="flex gap-x-[clamp(0.625rem,1.5vw,1rem)] justify-center">
           <button
             onClick={() => scrollToSection("projects")}
-            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(8rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
+            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(6rem,10vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
           >
             Projects
           </button>
 
           <button
             onClick={() => scrollToSection("experience")}
-            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(8rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
+            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(6rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
           >
             Experience
           </button>
           <button
             onClick={() => scrollToSection("skills")}
-            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(8rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
+            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(6rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
           >
             Skills
           </button>
