@@ -21,7 +21,7 @@ function Home({ scrollToSection }) {
   return (
     <section
       id="home"
-      className="flex pl-50 pr-50 pt-3 pb-3 w-full min-h-[calc(100dvh-72px)] pb-[calc(72px+78px)] gap-x-5 items-center"
+      className="flex flex-col md:flex-row sidePadding pt-3 pb-3 w-full min-h-[calc(100dvh-72px)] pb-[calc(72px+78px)] gap-x-5 items-center justify-center md:justify-start gap-y-7 "
     >
       <div
         className={
@@ -42,34 +42,47 @@ function Home({ scrollToSection }) {
           ></div>
         ))}
       </div>
-      <div className="flex-col flex gap-y-7">
+      <div className="flex-col flex gap-y-7  md:order-1 order-2">
         <div className="flex-col">
-          <div className="w-max relative text-6xl font-bold">
-            <span className=" w-[50%] h-[65%] right-[-5px] bottom-[-5px] absolute bg-gradient-to-l to-[#E5DCF1] from-[#DECFF3] z-10"></span>
-            <h1 className="z-20 relative">Hi, I'm Sameen.</h1>
+          <div className="w-full flex justify-center md:justify-start">
+            <div className="w-max relative text-6xl font-bold">
+              <span className=" w-[50%] h-[65%] right-[-5px] bottom-[-5px] absolute bg-gradient-to-l to-[#E5DCF1] from-[#DECFF3] z-10"></span>
+              <h1 className="z-20 relative text-[clamp(2.5rem,5vw,3.75rem)]">
+                Hi, I'm Sameen.
+              </h1>
+            </div>
           </div>
-          <h2 className="text-xl">
+          <h2 className="text-[clamp(0.75rem,2vw,1.25rem)] text-center md:text-start">
             Welcome to my portfolio! Explore how I combine creativity with
             functionality to bring ideas to life.
           </h2>
         </div>
-        <div className="flex gap-x-[15px]">
-          <button onClick={()=>scrollToSection("projects")} className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white  hover:bg-black hover: transition-all duration-150">
+        <div className="flex gap-x-[15px] justify-center">
+          <button
+            onClick={() => scrollToSection("projects")}
+            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(8rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
+          >
             Projects
           </button>
 
-          <button onClick={()=>scrollToSection("experience")} className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white hover:bg-black  transition-all duration-150">
+          <button
+            onClick={() => scrollToSection("experience")}
+            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(8rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
+          >
             Experience
           </button>
-          <button onClick={()=>scrollToSection("skills")} className="cursor-pointer text-sm rounded-full shadow-xl w-[170px] h-[40px] bg-primary text-white hover:bg-black  transition-all duration-150">
+          <button
+            onClick={() => scrollToSection("skills")}
+            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(8rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
+          >
             Skills
           </button>
         </div>
       </div>
-      <div className="h-full w-full">
-        <div className="flex justify-end">
+      <div className="h-full w-full  md:order-2 order-1">
+        <div className="flex justify-center md:justify-end">
           <img
-            className="w-[25vw] rounded-full z-100"
+            className="w-[clamp(15rem,25vw,26.875rem)] rounded-full z-100"
             src="/assets/Profile.jpg"
           ></img>
         </div>
