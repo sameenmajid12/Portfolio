@@ -5,17 +5,17 @@ function Experience() {
       id="experience"
       className="min-h-[calc(100dvh-var(--spacing-header))] sidePadding py-10 flex flex-col gap-y-10"
     >
-      <div className="flex justify-center">
+      <div className="flex md:justify-start justify-center">
         <div className="w-max relative text-5xl font-bold">
           <span className=" w-[70%] h-[70%] right-[-5px] bottom-[-5px] absolute bg-gradient-to-l to-[#E5DCF1] from-[#DECFF3] z-10"></span>
           <h1 className="z-20 relative text-[clamp(2.5rem,5vw,3.75rem)]">Experience.</h1>
         </div>
       </div>
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
+        initial={{ opacity: 0, transform:'translateY(50%)' }}
+        whileInView={{ opacity: 1, transform:'translateY(0)' }}
+        transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.3  }}
         className="bg-white w-full py-5 px-5 flex gap-x-10 rounded-2xl"
       >
         <p className="text-m whitespace-nowrap">November 2024-Present</p>

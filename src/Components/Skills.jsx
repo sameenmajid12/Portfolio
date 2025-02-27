@@ -46,7 +46,7 @@ function Skills() {
       id="skills"
       className="min-h-[calc(100dvh-72px)] py-10 flex flex-col gap-y-10 sidePadding pb-50"
     >
-      <div className="flex justify-center">
+      <div className="flex md:justify-start justify-center">
         <div className="w-max relative text-5xl font-bold">
           <span className=" w-[67%] h-[65%] right-[-5px] bottom-[-5px] absolute bg-gradient-to-l to-[#F2D4D4] from-[#F5B9B9] z-10 opacity-70"></span>
           <h1 className="z-20 relative text-[clamp(2.5rem,5vw,3.75rem)]">
