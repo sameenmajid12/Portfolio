@@ -5,7 +5,7 @@ const projects = [
   {
     title: "Lume",
     description:
-      "An online learning platform where users can contribute their knowledge and get rewarded with website currency. It creates a self-sustaining economy where learning and teaching are highly rewarded.",
+      "An online learning platform where users have the ability to contribute their knowledge on topics and get rewarded with our websites currency Brains. Using this currency users have the ability to buy other courses on the website,  creating a self-sustaining economy where learning and teaching are highly rewarded",
     imageUrl: "/assets/LumeSS.png",
     logoUrl: "/assets/LumeLogo.png",
     tools: [
@@ -14,7 +14,7 @@ const projects = [
       "Node.js",
       "MongoDB",
       "Figma",
-      "UI/UX Design",
+      "UI/UX",
       "REST APIs",
     ],
     status: "In Progress",
@@ -50,6 +50,7 @@ const projects = [
 ];
 
 function Projects() {
+  
   const navigate = useNavigate();
   const navToProject = (route) => {
     navigate(`${route}`);
@@ -82,16 +83,16 @@ function Projects() {
               whileInView={{ opacity: 1, transform: "translateY(0)" }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true, amount: 0.3 }}
-              className="cursor-pointer flex flex-col md:flex-row bg-white w-full h-50 flex gap-x-5 md:p-5 rounded-3xl relative hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all"
+              className="cursor-pointer flex flex-col md:flex-row bg-white w-full  flex gap-x-5 gap-y-2 p-5 rounded-3xl relative hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all"
             >
               <img
-                className="w-[clamp(15rem,20vw,19.375rem)] object-cover rounded-3xl md:rounded-sm border border-[rgba(0,0,0,0.10)]"
+                className="w-full md:w-[clamp(15rem,20vw,19.375rem)] object-cover rounded-md md:rounded-xl border border-[rgba(0,0,0,0.10)]"
                 src={project.imageUrl}
                 alt={project.title}
               />
-              <div className="flex flex-col justify-between">
+              <div className="flex flex-col gap-y-1 justify-between max-w-full">
                 <div>
-                  <h2 className="flex gap-x-2 font-bold text-2xl items-center pb-1">
+                  <h2 className="flex gap-x-2 font-bold text-[clamp(1.25rem,2vw,1.5rem)] items-center pb-1">
                     {project.title}
                     {project.logoUrl && (
                       <img
@@ -101,18 +102,19 @@ function Projects() {
                       />
                     )}
                   </h2>
-                  <p className="text-m text-[#6F6F6F]">{project.description}</p>
+                  <p className="text-[clamp(0.75rem,1vw,1rem)] text-[#6F6F6F] w-full mb-2">{project.description}</p>
                 </div>
-                <div className="flex items-center gap-x-2">
-                  <i className="fa-solid fa-screwdriver-wrench text-[#FF6868]"></i>
+                <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
+                 
                   {project.tools.map((tool, i) => (
                     <button
                       key={i}
-                      className="text-xs bg-[#FFB4B4] w-25 h-6 text-white rounded-full"
+                      className="text-[clamp(0.5rem,1.25vw,0.75rem)] bg-[#FFB4B4] px-3 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full"
                     >
                       {tool}
                     </button>
                   ))}
+
                 </div>
               </div>
               <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold">
