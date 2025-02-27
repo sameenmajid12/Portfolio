@@ -59,7 +59,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-[calc(100dvh-var(--spacing-header))] sidePadding py-10 flex flex-col gap-y-10"
+      className="min-h-[calc(100dvh-var(--spacing-header))] sidePadding py-10 flex flex-col gap-y-15 md:gap-y-10"
     >
       <div className="flex md:justify-start justify-center">
         <div className="w-max relative text-5xl font-bold">
@@ -83,7 +83,7 @@ function Projects() {
               whileInView={{ opacity: 1, transform: "translateY(0)" }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true, amount: 0.3 }}
-              className="cursor-pointer flex flex-col md:flex-row bg-white w-full  flex gap-x-5 gap-y-2 p-5 rounded-3xl relative hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all"
+              className="cursor-pointer flex flex-col md:flex-row bg-white w-full  flex gap-x-5 gap-y-2 p-5 rounded-2xl md:rounded-3xl relative hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all"
             >
               <img
                 className="w-full md:w-[clamp(15rem,20vw,19.375rem)] object-cover rounded-md md:rounded-xl border border-[rgba(0,0,0,0.10)]"
