@@ -1,4 +1,38 @@
 import { motion } from "framer-motion";
+const experiences = [
+  {
+    date: "November 2024 - Present",
+    role: "Frontend & Backend Developer",
+    company: "Humanity Unleashed",
+    companyLogo: "/assets/humun_logo.jpg",
+    description: (
+      <>
+        <strong>Coauthored a published research paper</strong> by analyzing and
+        recommending the ideal database architecture to{" "}
+        <strong>optimize scalability and efficiency</strong>. Designed and
+        implemented <strong>API endpoints</strong> for user authentication,
+        ensuring{" "}
+        <strong>
+          secure and seamless communication between the front-end and back-end
+        </strong>
+        . <strong>Developed detailed documentation</strong> for the
+        authentication system to streamline integration and improve developer
+        comprehension.
+      </>
+    ),
+    skills: [
+      "API Development and Documentation",
+      "Database Architecture",
+      "Research",
+      "Figma",
+      "MongoDB",
+      "Authentication Systems",
+    ],
+    externalLink: {
+      url: "https://www.linkedin.com/in/sameen-majid-8b31591ba/",
+    },
+  },
+];
 function Experience() {
   return (
     <section
@@ -8,73 +42,50 @@ function Experience() {
       <div className="flex md:justify-start justify-center">
         <div className="w-max relative text-5xl font-bold">
           <span className=" w-[70%] h-[70%] right-[-5px] bottom-[-5px] absolute bg-gradient-to-l to-[#E5DCF1] from-[#DECFF3] z-10"></span>
-          <h1 className="z-20 relative text-[clamp(2.5rem,5vw,3.75rem)]">Experience.</h1>
+          <h1 className="z-20 relative text-[clamp(2.5rem,5vw,3.75rem)]">
+            Experience.
+          </h1>
         </div>
       </div>
-      <motion.div
-        initial={{ opacity: 0, transform:'translateY(50%)' }}
-        whileInView={{ opacity: 1, transform:'translateY(0)' }}
-        transition={{ duration: 0.5 }}
-      viewport={{ once: true, amount: 0.3  }}
-        className="bg-white w-full py-5 px-5 flex gap-x-10 rounded-2xl"
-      >
-        <p className="text-m whitespace-nowrap">November 2024-Present</p>
-        <div className="flex flex-col">
-          <h3 className="text-2xl font-bold items-center flex gap-x-3 pb-1">
-            Frontend & Backend Developer • Humanity Unleashed{" "}
-            <i className="fa-solid fa-square-arrow-up-right text-[#A75FFF] text-3xl"></i>
-          </h3>
-          <p className="text-[#6F6F6F]">
-            <span className="font-bold">
-              Coauthored a published research paper
-            </span>{" "}
-            by analyzing and recommending the ideal database architecture to{" "}
-            <span className="font-bold">
-              optimize scalability and efficiency
-            </span>
-            . Designed and implemented{" "}
-            <span className="font-bold"> API endpoints </span>for user
-            authentication, ensuring{" "}
-            <span className="font-bold">
-              secure and seamless communication between the front-end and
-              back-end
-            </span>
-            .{" "}
-            <span className="font-bold">Developed detailed documentation</span>{" "}
-            for the authentication system to streamline integration and improve
-            developer comprehension.
-          </p>
-          <div className="pt-10 flex gap-x-2 items-center">
-            <i class="fa-solid fa-microchip text-2xl text-[#A75FFF]"></i>
-            <div className="text-xs text-white flex gap-x-2">
-              <button className="min-w-[100px] h-[24px] bg-[#D3AFFF] px-3 rounded-full">
-                API Development and Documentation
-              </button>
-              <button className="min-w-[100px] h-[24px] bg-[#D3AFFF] px-3 rounded-full">
-                Database Architecture
-              </button>
-              <button className="min-w-[100px] h-[24px] bg-[#D3AFFF] px-3 rounded-full">
-                Research
-              </button>
-              <button className="min-w-[100px] h-[24px] bg-[#D3AFFF] px-3 rounded-full">
-                Figma
-              </button>
-              <button className="min-w-[100px] h-[24px] bg-[#D3AFFF] px-3 rounded-full">
-                MongoDB
-              </button>
-              <button className="min-w-[100px] h-[24px] bg-[#D3AFFF] px-3 rounded-full">
-                Authentication Systems
-              </button>
+      {experiences.map((experience, index) => {
+        return (
+          <motion.div
+            initial={{ opacity: 0, transform: "translateY(20%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0)" }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.05 }}
+            className="bg-white w-full py-5 px-5 flex [@media(max-width:1200px)]:flex-col gap-x-10 rounded-2xl"
+          >
+            <p className="text-[clamp(0.875rem,1.5vw,1.5rem)] whitespace-nowrap">{experience.date}</p>
+            <div className="flex flex-col">
+              <h3 className="text-[clamp(0.875rem,1.5vw,1.5rem)] text-2xl font-bold pb-1">
+                {experience.role} • {experience.company}{" "}
+                <i className="fa-solid fa-square-arrow-up-right text-[#A75FFF] text-[clamp(1.25rem,1.5vw,1.875rem)] pl-2"></i>
+              </h3>
+              <p className="text-[#6F6F6F] text-[clamp(0.75rem,1vw,1rem)]">{experience.description}</p>
+              <div className="pt-10 [@media(max-width:1200px)]:pt-4 flex gap-x-2 items-center">
+                <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
+                  <i class="fa-solid fa-microchip text-2xl text-[#A75FFF]"></i>
+                  {experience.skills.map((skill, index) => {
+                    return (
+                      <button className="text-[clamp(0.5rem,1.25vw,0.75rem)] bg-[#D3AFFF] px-5 [@media(max-width:1200px)]:px-3 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full">
+                        {skill}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="max-w-[100px] aspect-w-1 aspect-h-1">
-          <img
-            className="border-1 border-gray-200 rounded-md "
-            src="/assets/humun_logo.jpg"
-          ></img>
-        </div>
-      </motion.div>
+            <div className="max-w-[100px] aspect-w-1 aspect-h-1 [@media(max-width:1200px)]:hidden">
+              <img
+                className="border-1 border-gray-200 rounded-md "
+                src="/assets/humun_logo.jpg"
+              ></img>
+            </div>
+          </motion.div>
+        );
+      })}
+
       <motion.div
         initial={{ transform: "translateX(100px)", opacity: 0 }}
         whileInView={{ transform: "translateX(0px)", opacity: 1 }}
