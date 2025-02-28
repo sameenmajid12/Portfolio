@@ -5,7 +5,14 @@ const projects = [
   {
     title: "Lume",
     description:
-      "An online learning platform where users have the ability to contribute their knowledge on topics and get rewarded with our websites currency Brains. Using this currency users have the ability to buy other courses on the website,  creating a self-sustaining economy where learning and teaching are highly rewarded",
+     (<>
+      An <strong>online learning platform</strong> where users have the ability
+      to contribute their knowledge on topics and get rewarded with our
+      website’s currency, Brains. Using this currency, users have the ability
+      to buy other courses on the website, creating a{" "}
+      <strong>self-sustaining economy</strong> where{" "}
+      <strong>learning and teaching are highly rewarded</strong>.
+    </>),
     imageUrl: "/assets/LumeSS.png",
     logoUrl: "/assets/LumeLogo.png",
     tools: [
@@ -23,7 +30,16 @@ const projects = [
   {
     title: "NestFrames",
     description:
-      "A social media web app for collaborative group albums, allowing users to create, share, and manage albums with friends. Real-time messaging and notifications keep users connected.",
+      (
+        <>
+          A <strong>social media web app for collaborative group albums</strong>,
+          letting users <strong>create, share, and manage albums with friends</strong>.
+          With <strong>real-time messaging and notifications</strong>, users stay
+          connected through updates, tags, and comments. Customizable profiles
+          make sharing seamless, fostering a community-driven experience built
+          around shared memories.
+        </>
+      ),
     imageUrl: "/assets/NestFramesSS.png",
     logoUrl: "/assets/NestFramesLogo.png",
     tools: [
@@ -41,7 +57,17 @@ const projects = [
   {
     title: "InterModal",
     description:
-      "An iOS application that revolutionizes trip planning by calculating routes with unlimited stops and different modes of transportation. It seamlessly combines transit options for a flexible travel plan.",
+    (
+      <>
+        InterModal is a smart transportation app designed to{" "}
+        <strong>optimize travel</strong> across multiple modes of transit, making
+        commuting <strong>faster, more efficient, and hassle-free</strong>. With{" "}
+        <strong>real-time route planning</strong>, <strong>live updates</strong>,
+        and <strong>seamless integration</strong> of various transportation
+        options, InterModal helps users navigate their journeys{" "}
+        <strong>with ease</strong>.
+      </>
+    ),
     imageUrl: "/assets/InterModalSS.png",
     logoUrl: "",
     tools: ["Swift", "SwiftUI", "Firebase", "XCode"],
@@ -79,7 +105,7 @@ function Projects() {
             rel="noopener noreferrer"
           >
             <motion.div
-              initial={{ opacity: 0, transform: "translateY(50%)" }}
+              initial={{ opacity: 0, transform: "translateY(20%)" }}
               whileInView={{ opacity: 1, transform: "translateY(0)" }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -105,11 +131,11 @@ function Projects() {
                   <p className="text-[clamp(0.75rem,1vw,1rem)] text-[#6F6F6F] w-full mb-2">{project.description}</p>
                 </div>
                 <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
-                 
+                <i class="fa-solid fa-screwdriver-wrench text-[#FF6868]"></i>
                   {project.tools.map((tool, i) => (
                     <button
                       key={i}
-                      className="text-[clamp(0.5rem,1.25vw,0.75rem)] bg-[#FFB4B4] px-3 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full"
+                      className="text-[clamp(0.5rem,1.25vw,0.75rem)] bg-[#FFB4B4] px-5 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full"
                     >
                       {tool}
                     </button>
@@ -117,7 +143,7 @@ function Projects() {
 
                 </div>
               </div>
-              <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold">
+              <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold text-[clamp(0.875rem,1.25vw,1rem)]">
                 {project.status}
               </span>
             </motion.div>
