@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 function Skills() {
   const skillCategories = [
     {
@@ -5,7 +6,7 @@ function Skills() {
       skills: [
         { name: "JavaScript", image: "/assets/javascript.png" },
         { name: "Swift", image: "/assets/swift.png" },
-        {name:"Java", image:"/assets/java.png"}
+        { name: "Java", image: "/assets/java.png" },
       ],
     },
     {
@@ -21,11 +22,11 @@ function Skills() {
       category: "Backend",
       skills: [
         { name: "Express.js", image: "/assets/express.png" },
-        { name: "MongoDB", image: "/assets/mongodb.svg" },
+        { name: "MongoDB", image: "/assets/mongodb.png" },
         { name: "Node.js", image: "/assets/nodejs.png" },
         { name: "Socket.IO", image: "/assets/socketio.png" },
-        {name:"SQL", image:"/assets/sql.png"},
-        {name:"Firebase", image:"/assets/firebase.png"}
+        { name: "SQL", image: "/assets/sql.png" },
+        { name: "Firebase", image: "/assets/firebase.png" },
       ],
     },
     {
@@ -55,30 +56,31 @@ function Skills() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-y-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-20 text-center gap-x-4">
         {skillCategories.map((category, index) => (
-          <div key={index}>
-            <h2 className="font-bold">{category.category}</h2>
-            <div className="grid grid-cols-[repeat(auto-fit,clamp(8rem,17.5vw,12.5rem))] gap-x-[clamp(2.5rem,4vw,4rem)] gap-y-[clamp(1.5rem,4vw,2.5rem)]">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true, amount: 0.8 }}
+            className="flex flex-col items-center md:items-start"
+            key={index}
+          >
+            <h2 className="font-bold text-red text-[clamp(1.25rem,1.5vw,1.5rem)]">
+              {category.category}
+            </h2>
+            <div className="flex gap-x-2 flex-wrap gap-y-1 justify-center md:justify-start">
               {category.skills.map((skill, skillIndex) => (
-                <div
-                  key={skillIndex}
-                  className="h-[clamp(10rem,17.5vw,15.625rem)] w-[clamp(8rem,17.5vw,12.5rem)] flex flex-col bg-white rounded-2xl shadow-[0px_15px_15px_rgba(255,104,104,0.15)] overflow-hidden items-center"
-                >
-                  <div className="flex-1 flex justify-center">
-                    <img
-                      className="object-contain w-[clamp(3.75rem,10vw,4.25rem)]"
-                      src={skill.image}
-                      alt={skill.name}
-                    />
-                  </div>
-                  <div className="w-full bg-red flex justify-center items-center text-white font-bold py-2 text-sm">
-                    {skill.name}
-                  </div>
+                <div className="flex items-center gap-x-2 font-bold text-[clamp(1rem,1.25vw,1.125rem)]">
+                  {skill.name}
+                  <div className="flex items-center gap-x-[2px]">
+                    <img className="max-h-5 max-w-7" src={skill.image}></img>
+                    {skillIndex !== category.skills.length - 1 ? ", " : ""}{" "}
+                  </div>{" "}
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
