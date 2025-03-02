@@ -4,15 +4,16 @@ import { useNavigate } from "react-router-dom";
 const projects = [
   {
     title: "Lume",
-    description:
-     (<>
-      An <strong>online learning platform</strong> where users have the ability
-      to contribute their knowledge on topics and get rewarded with our
-      website’s currency, Brains. Using this currency, users have the ability
-      to buy other courses on the website, creating a{" "}
-      <strong>self-sustaining economy</strong> where{" "}
-      <strong>learning and teaching are highly rewarded</strong>.
-    </>),
+    description: (
+      <>
+        An <strong>online learning platform</strong> where users have the
+        ability to contribute their knowledge on topics and get rewarded with
+        our website’s currency, Brains. Using this currency, users have the
+        ability to buy other courses on the website, creating a{" "}
+        <strong>self-sustaining economy</strong> where{" "}
+        <strong>learning and teaching are highly rewarded</strong>.
+      </>
+    ),
     imageUrl: "/assets/LumeSS.png",
     logoUrl: "/assets/LumeLogo.png",
     tools: [
@@ -29,17 +30,17 @@ const projects = [
   },
   {
     title: "NestFrames",
-    description:
-      (
-        <>
-          A <strong>social media web app for collaborative group albums</strong>,
-          letting users <strong>create, share, and manage albums with friends</strong>.
-          With <strong>real-time messaging and notifications</strong>, users stay
-          connected through updates, tags, and comments. Customizable profiles
-          make sharing seamless, fostering a community-driven experience built
-          around shared memories.
-        </>
-      ),
+    description: (
+      <>
+        A <strong>social media web app for collaborative group albums</strong>,
+        letting users{" "}
+        <strong>create, share, and manage albums with friends</strong>. With{" "}
+        <strong>real-time messaging and notifications</strong>, users stay
+        connected through updates, tags, and comments. Customizable profiles
+        make sharing seamless, fostering a community-driven experience built
+        around shared memories.
+      </>
+    ),
     imageUrl: "/assets/NestFramesSS.png",
     logoUrl: "/assets/NestFramesLogo.png",
     tools: [
@@ -56,14 +57,14 @@ const projects = [
   },
   {
     title: "InterModal",
-    description:
-    (
+    description: (
       <>
         InterModal is a smart transportation app designed to{" "}
-        <strong>optimize travel</strong> across multiple modes of transit, making
-        commuting <strong>faster, more efficient, and hassle-free</strong>. With{" "}
-        <strong>real-time route planning</strong>, <strong>live updates</strong>,
-        and <strong>seamless integration</strong> of various transportation
+        <strong>optimize travel</strong> across multiple modes of transit,
+        making commuting{" "}
+        <strong>faster, more efficient, and hassle-free</strong>. With{" "}
+        <strong>real-time route planning</strong>, <strong>live updates</strong>
+        , and <strong>seamless integration</strong> of various transportation
         options, InterModal helps users navigate their journeys{" "}
         <strong>with ease</strong>.
       </>
@@ -76,7 +77,6 @@ const projects = [
 ];
 
 function Projects() {
-  
   const navigate = useNavigate();
   const navToProject = (route) => {
     navigate(`${route}`);
@@ -128,19 +128,20 @@ function Projects() {
                       />
                     )}
                   </h2>
-                  <p className="text-[clamp(0.75rem,1vw,1rem)] text-[#6F6F6F] w-full mb-2">{project.description}</p>
+                  <p className="text-[clamp(0.75rem,1vw,1rem)] text-[#6F6F6F] w-full mb-2">
+                    {project.description}
+                  </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
-                <i class="fa-solid fa-screwdriver-wrench text-[#FF6868]"></i>
+                  <i class="fa-solid fa-screwdriver-wrench text-[#FF6868]"></i>
                   {project.tools.map((tool, i) => (
                     <button
                       key={i}
-                      className="text-[clamp(0.5rem,1.25vw,0.75rem)] bg-[#FFB4B4] px-5 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full"
+                      className="text-[clamp(0.625rem,1.25vw,0.75rem)] bg-[#FFB4B4] px-5 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full"
                     >
                       {tool}
                     </button>
                   ))}
-
                 </div>
               </div>
               <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold text-[clamp(0.875rem,1.25vw,1rem)]">
@@ -149,13 +150,19 @@ function Projects() {
             </motion.div>
           </a>
         ))}
-        <div className="flex justify-center text-xl font-bold items-center pb-5">
-          <div className="relative pr-2">
+        <motion.div
+          initial={{ opacity: 0}}
+          whileInView={{ opacity: 1}}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="flex justify-center font-bold items-center pb-5"
+        >
+          <div className="relative pr-2 text-[clamp(1rem, 1.25vw,1.25rem)]">
             Stay tuned for more!
             <span className="w-[30%] absolute h-[3px] bg-[#FF6868] rounded-md bottom-[-2px] left-0"></span>
           </div>
           <i className="fa-solid fa-folder-open text-[#FF6868]"></i>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

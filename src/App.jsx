@@ -21,7 +21,12 @@ function App() {
       window.removeEventListener("scroll", handleScrollTop);
     };
   }, []);
-
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--header-height",
+      window.scrollY === 0 ? "0px" : `72px`
+    )
+  }, [windowTop]);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
@@ -41,6 +46,7 @@ function App() {
       sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
+
   const checkActive = (route) => {
     if (active === route) {
       return true;
@@ -49,23 +55,26 @@ function App() {
   };
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
-    if(!checkActive(sectionId)){
+    if (!checkActive(sectionId)) {
       window.scrollTo({
         top: section.offsetTop - 72,
         behavior: "smooth",
       });
     }
-    
   };
-  
+
   return (
-    <div className={`flex-col min-h-screen ${!windowTop ? "mt-[72px]" : ""}`}>
-      <Header windowTop={windowTop} scrollToSection={scrollToSection} checkActive={checkActive}/>
-      <Home scrollToSection={scrollToSection}/>
+    <div className={`flex-col min-h-screen mt-[var(--header-height)]`}>
+      <Header
+        windowTop={windowTop}
+        scrollToSection={scrollToSection}
+        checkActive={checkActive}
+      />
+      <Home scrollToSection={scrollToSection} />
       <Projects />
-      <Experience/>
-      <Skills/>
-      <Footer/>
+      <Experience />
+      <Skills />
+      <Footer />
       <ContactBar />
     </div>
   );

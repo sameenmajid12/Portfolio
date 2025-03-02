@@ -7,15 +7,17 @@
   --color-green:#5AFF8C;
   --color-purple:#A75FFF;
   --color-bgColor:#efefef;
-  --spacing-header: 72px;
   --animate-float:float ease-in-out infinite;
   --animate-slide-in:slideIn 0.5s ease;
+}
+:root{
+  --header-height:0px;
 }
 html{
   font-family: 'Inria Sans';
   color:#313131;
   scroll-behavior: smooth;
-
+  overflow-x: hidden;
 }
 body{
   background-color: #EFEFEF;
@@ -27,8 +29,20 @@ html, body, #root {
   width:100%;
 }
 .sidePadding{
-  padding-left:clamp(1rem, 9vw, 12.5rem);
-  padding-right:clamp(1rem, 9vw, 12.5rem);
+  padding-left:clamp(9rem,9vw,10.9375rem);
+  padding-right:clamp(9rem,9vw,10.9375rem);
+}
+@media(max-width:1200px){
+  .sidePadding{
+    padding-left:clamp(4.5rem,7vw,7rem);
+    padding-right:clamp(4.5rem,7vw,7rem);
+  }
+}
+@media (max-width:650px) {
+  .sidePadding{
+    padding-left:clamp(1.5rem,4vw,4rem);
+    padding-right:clamp(1.5rem,4vw,4rem);
+  }
 }
 @keyframes float {
   0% { transform: translateY(0px); opacity: 0.8; }

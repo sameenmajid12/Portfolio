@@ -68,7 +68,7 @@ function Experience() {
                   <i class="fa-solid fa-microchip text-2xl text-[#A75FFF]"></i>
                   {experience.skills.map((skill, index) => {
                     return (
-                      <button className="text-[clamp(0.5rem,1.25vw,0.75rem)] bg-[#D3AFFF] px-5 [@media(max-width:1200px)]:px-3 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full">
+                      <button className="text-[clamp(0.625rem,1.25vw,0.75rem)] bg-[#D3AFFF] px-5 [@media(max-width:1200px)]:px-3 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full">
                         {skill}
                       </button>
                     );
@@ -87,8 +87,8 @@ function Experience() {
       })}
 
       <motion.div
-        initial={{ transform: "translateX(100px)", opacity: 0 }}
-        whileInView={{ transform: "translateX(0px)", opacity: 1 }}
+        initial={{ opacity: 0}}
+        whileInView={{opacity: 1}}
         transition={{ duration: 0.5 }}
         viewport={{ once: true, amount: 1 }}
       >
@@ -97,13 +97,13 @@ function Experience() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex justify-center flex-col md:flex-row gap-y-3 w-full items-center gap-x-3 group cursor-pointer">
-            <p className="font-bold text-[#313131] md:text-[#6F6F6F] text-center text-[clamp(0.75rem,1.5vw,1rem)] group-hover:text-[#313131]">
+          <div className="flex justify-center flex-col md:flex-row gap-y-2 w-full items-center gap-x-3 group cursor-pointer">
+            <p className="font-bold text-[#313131] md:text-[#6F6F6F] text-center text-[clamp(0.625rem,1.5vw,1rem)] group-hover:text-[#313131]">
               I’m always looking for the next opportunity to apply my skills.
               Let’s get in touch and discuss how I can help bring your project
               to life!
             </p>
-            <i className="fa-brands fa-linkedin text-2xl text-[#A75FFF] md:text-[#D3AFFF] group-hover:text-[#A75FFF]"></i>
+            <i className="fa-brands fa-linkedin text-[clamp(1rem,1.5vw,1.5rem)] text-[#A75FFF] md:text-[#D3AFFF] group-hover:text-[#A75FFF]"></i>
           </div>
         </a>
       </motion.div>
