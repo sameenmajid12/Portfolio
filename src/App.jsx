@@ -26,6 +26,17 @@ function App() {
       "--header-height",
       window.scrollY === 0 ? "0px" : `72px`
     )
+    function changeThemeColor(color) {
+      let metaThemeColor = document.querySelector("meta[name=theme-color]");
+      if (!metaThemeColor) {
+        metaThemeColor = document.createElement("meta");
+        metaThemeColor.setAttribute("name", "theme-color");
+        document.head.appendChild(metaThemeColor);
+      }
+      metaThemeColor.setAttribute("content", color);
+    }
+    changeThemeColor(windowTop ? "#efefef" : "#FFF");
+
   }, [windowTop]);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
