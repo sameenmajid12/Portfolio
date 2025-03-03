@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../index.css";
 import HeaderMenu from "./HeaderMenu";
-function Header({ windowTop, scrollToSection, checkActive }) {
+function Header({ windowTop, scrollToSection, checkActive, changeThemeColor }) {
   const [menuVisibility, setMenuVisibility] = useState(false);
+  useEffect(()=>{
+    changeThemeColor(menuVisibility?'#fff':'#efefef')
+  },[menuVisibility])
   const toggleMenu = () => {
     setMenuVisibility((prev) => !prev);
   };
@@ -18,7 +21,7 @@ function Header({ windowTop, scrollToSection, checkActive }) {
             : "relative shadow-none bg-transparent"
         }`}
       >
-        <img className="w-auto h-6" src="/assets/logo.png"></img>
+        <img className="w-auto h-[clamp(1.25rem,1.5vw,1.5rem)]" src="/assets/logo.png"></img>
         <div className="text-primary hidden md:flex text-l gap-x-5">
           <div
             className={`relative cursor-pointer ${

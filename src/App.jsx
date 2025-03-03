@@ -12,6 +12,15 @@ function App() {
   const [windowTop, setWindowTop] = useState(true);
   const [active, setActive] = useState("");
   const [screenSize, setScreenSize] = useState(false);
+  const changeThemeColor=(color)=> {
+    let metaThemeColor = document.querySelector("meta[name=theme-color]");
+    if (!metaThemeColor) {
+      metaThemeColor = document.createElement("meta");
+      metaThemeColor.setAttribute("name", "theme-color");
+      document.head.appendChild(metaThemeColor);
+    }
+    metaThemeColor.setAttribute("content", color);
+  }
   useEffect(() => {
     const handleScrollTop = () => {
       setWindowTop(window.scrollY === 0);
@@ -26,17 +35,8 @@ function App() {
       "--header-height",
       window.scrollY === 0 ? "0px" : `72px`
     )
-    function changeThemeColor(color) {
-      let metaThemeColor = document.querySelector("meta[name=theme-color]");
-      if (!metaThemeColor) {
-        metaThemeColor = document.createElement("meta");
-        metaThemeColor.setAttribute("name", "theme-color");
-        document.head.appendChild(metaThemeColor);
-      }
-      metaThemeColor.setAttribute("content", color);
-    }
     changeThemeColor(windowTop ? "#efefef" : "#FFF");
-
+    console.log(windowTop);
   }, [windowTop]);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -75,11 +75,12 @@ function App() {
   };
 
   return (
-    <div className={`flex-col min-h-screen mt-[var(--header-height)]`}>
+    <div className={`flex-col relative min-h-screen`}>
       <Header
         windowTop={windowTop}
         scrollToSection={scrollToSection}
         checkActive={checkActive}
+        changeThemeColor={changeThemeColor}
       />
       <Home scrollToSection={scrollToSection} />
       <Projects />

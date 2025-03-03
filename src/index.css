@@ -22,7 +22,8 @@ html{
 body{
   background-color: #EFEFEF;
   min-height: 100dvh;
-  width:100dvw
+  width:100dvw;
+  margin-top: var(--header-height);
 }
 html, body, #root {
   height: 100%;

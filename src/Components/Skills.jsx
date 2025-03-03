@@ -62,7 +62,7 @@ function Skills() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true, amount: 0.8 }}
+            viewport={{ once: true, amount: 1 }}
             className="flex flex-col items-center md:items-start"
             key={index}
           >

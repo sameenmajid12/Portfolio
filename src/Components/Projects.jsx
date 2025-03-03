@@ -105,10 +105,10 @@ function Projects() {
             rel="noopener noreferrer"
           >
             <motion.div
-              initial={{ opacity: 0, transform: "translateY(20%)" }}
-              whileInView={{ opacity: 1, transform: "translateY(0)" }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true, amount: 0.05 }}
+              initial={{ opacity: 0}}
+              whileInView={{ opacity: 1}}
+              transition={{ duration: 1 }}
+              viewport={{ once: true, amount: 0.1 }}
               className="cursor-pointer flex flex-col md:flex-row bg-white w-full  flex gap-x-5 gap-y-2 p-5 rounded-2xl md:rounded-3xl relative hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all"
             >
               <img
@@ -154,7 +154,7 @@ function Projects() {
           initial={{ opacity: 0}}
           whileInView={{ opacity: 1}}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 1 }}
           className="flex justify-center font-bold items-center pb-5"
         >
           <div className="relative pr-2 text-[clamp(1rem, 1.25vw,1.25rem)]">

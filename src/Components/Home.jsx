@@ -21,13 +21,9 @@ function Home({ scrollToSection }) {
   return (
     <section
       id="home"
-      className="flex flex-col md:flex-row sidePadding pt-3 pb-3 w-full min-h-[calc(100dvh-72px)] pb-[calc(72px+78px)] gap-x-5 items-center justify-center md:justify-start gap-y-7 "
+      className="flex flex-col relative md:flex-row sidePadding pt-3 pb-3 w-full min-h-[calc(100dvh-72px)] pb-[calc(72px+78px)] gap-x-5 items-center justify-center md:justify-start gap-y-7 "
     >
-      <div
-        className={
-          "absolute top-0 bottom-0 right-0 left-0 pointer-events-none z-0"
-        }
-      >
+      <div className="absolute top-0 bottom-0 right-0 left-0 pointer-events-none z-0">
         {particles.map((particle) => (
           <div
             key={particle.id}

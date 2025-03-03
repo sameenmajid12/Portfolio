@@ -37,7 +37,7 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="min-h-[calc(100dvh-var(--spacing-header))] sidePadding py-10 flex flex-col gap-y-10"
+      className="min-h-[calc(100dvh-72px)] sidePadding py-10 flex flex-col gap-y-10"
     >
       <div className="flex md:justify-start justify-center">
         <div className="w-max relative text-5xl font-bold">
@@ -50,13 +50,13 @@ function Experience() {
       {experiences.map((experience, index) => {
         return (
           <motion.div
-            initial={{ opacity: 0, transform: "translateY(20%)" }}
-            whileInView={{ opacity: 1, transform: "translateY(0)" }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, amount: 0.05 }}
-            className="bg-white w-full py-5 px-5 flex [@media(max-width:1200px)]:flex-col gap-x-10 rounded-2xl"
+            initial={{ opacity: 0}}
+            whileInView={{ opacity: 1}}
+            transition={{ duration: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            className="bg-white w-full py-5 px-5 flex [@media(max-width:1200px)]:flex-col gap-x-5 rounded-2xl"
           >
-            <p className="text-[clamp(0.875rem,1.5vw,1.5rem)] whitespace-nowrap">{experience.date}</p>
+            <p className="text-[clamp(0.875rem,1.5vw,1.25rem)] whitespace-nowrap">{experience.date}</p>
             <div className="flex flex-col">
               <h3 className="text-[clamp(0.875rem,1.5vw,1.5rem)] text-2xl font-bold pb-1">
                 {experience.role} • {experience.company}{" "}
@@ -98,7 +98,7 @@ function Experience() {
           rel="noopener noreferrer"
         >
           <div className="flex justify-center flex-col md:flex-row gap-y-2 w-full items-center gap-x-3 group cursor-pointer">
-            <p className="font-bold text-[#313131] md:text-[#6F6F6F] text-center text-[clamp(0.625rem,1.5vw,1rem)] group-hover:text-[#313131]">
+            <p className="font-bold text-[#313131] md:text-[#6F6F6F] text-center text-[clamp(0.75rem,1.5vw,1rem)] group-hover:text-[#313131]">
               I’m always looking for the next opportunity to apply my skills.
               Let’s get in touch and discuss how I can help bring your project
               to life!
