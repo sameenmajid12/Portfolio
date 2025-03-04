@@ -24,9 +24,11 @@ body{
   min-height: 100dvh;
   width:100dvw;
 }
+
 html, body, #root {
   height: 100%;
   width:100%;
+  overscroll-behavior: none;
 }
 .sidePadding{
   padding-left:clamp(9rem,9vw,10.9375rem);

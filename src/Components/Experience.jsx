@@ -54,6 +54,7 @@ function Experience() {
               transition={{ duration: 1 }}
               viewport={{ once: true, amount: 0.1 }}
               className="bg-white w-full py-5 px-5 flex [@media(max-width:1200px)]:flex-col gap-x-5 rounded-2xl hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all"
+              style={{willChange:'opacity'}}
             >
               <p className="text-[clamp(0.875rem,1.5vw,1.25rem)] whitespace-nowrap">
                 {experience.date}
@@ -95,6 +96,7 @@ function Experience() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true, amount: 1 }}
+        style={{willChange:'opacity'}}
       >
         <a
           href="https://www.linkedin.com/in/sameen-majid-8b31591ba/"

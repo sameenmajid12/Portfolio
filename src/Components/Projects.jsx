@@ -112,6 +112,7 @@ function Projects() {
               transition={{ duration: 1 }}
               viewport={{ once: true, amount: 0.1 }}
               className="cursor-pointer flex flex-col md:flex-row bg-white w-full  flex gap-x-5 gap-y-2 p-5 rounded-2xl md:rounded-3xl relative hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all"
+              style={{willChange:'opacity'}}
             >
               <img
                 className="w-full md:w-[clamp(15rem,20vw,19.375rem)] object-cover rounded-md md:rounded-xl border border-[rgba(0,0,0,0.10)]"
@@ -158,6 +159,7 @@ function Projects() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true, amount: 1 }}
           className="flex justify-center font-bold items-center pb-5"
+          style={{willChange:'opacity'}}
         >
           <div className="relative pr-2 text-[clamp(1rem, 1.25vw,1.25rem)]">
             Stay tuned for more!
