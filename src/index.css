@@ -21,14 +21,12 @@ html{
 }
 body{
   background-color: #EFEFEF;
-  min-height: 100dvh;
-  width:100dvw;
 }
-
 html, body, #root {
-  height: 100%;
-  width:100%;
-  overscroll-behavior: none;
+  min-height: 100vh;
+  height: -webkit-fill-available;
+  width:100dvw;
+  overscroll-behavior: contain;
 }
 .sidePadding{
   padding-left:clamp(9rem,9vw,10.9375rem);
@@ -50,17 +48,6 @@ html, body, #root {
   0% { transform: translateY(0px); opacity: 0.8; }
   50% { transform: translateY(-15px); opacity: 0.4; }
   100% { transform: translateY(0px); opacity: 0.8; }
-}
-@keyframes floatbar {
-  0%{
-    transform: translateY(0px);
-  }
-  50%{
-    transform: translateY(15px);
-  }
-  100%{
-    transform: translateY(0);
-  }
 }
 @keyframes slideUp {
   0%{
