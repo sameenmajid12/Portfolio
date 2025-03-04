@@ -23,8 +23,7 @@ body{
   background-color: #EFEFEF;
 }
 html, body, #root {
-  min-height: 100vh;
-  height: -webkit-fill-available;
+  min-height: 100svh;
   width:100dvw;
   overscroll-behavior: contain;
 }
