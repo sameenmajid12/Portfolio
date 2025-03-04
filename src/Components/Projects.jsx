@@ -54,6 +54,7 @@ const projects = [
       "AWS",
     ],
     status: "In Progress",
+    link:"https://github.com/Saminraiyan12/NestFrames-Backend"
   },
   {
     title: "InterModal",
@@ -73,6 +74,7 @@ const projects = [
     logoUrl: "",
     tools: ["Swift", "SwiftUI", "Firebase", "XCode"],
     status: "Submitted to HackRU Fall 2024",
+    link:"https://devpost.com/software/intermodal"
   },
 ];
 
@@ -133,7 +135,7 @@ function Projects() {
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
-                  <i class="fa-solid fa-screwdriver-wrench text-[#FF6868]"></i>
+                  <i className="fa-solid fa-screwdriver-wrench text-[#FF6868]"></i>
                   {project.tools.map((tool, i) => (
                     <button
                       key={i}

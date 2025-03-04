@@ -4,7 +4,6 @@ function Home({ scrollToSection }) {
 
   useEffect(() => {
     const generateParticles = () => {
-      console.log(Math.random() * 99);
       const newParticles = Array.from({ length: 35 }).map((_, i) => ({
         id: i,
         x: Math.random() * 99,

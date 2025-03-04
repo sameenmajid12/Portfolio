@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Header from "./Components/Header";
-import ContactBar from "./Components/ContactBar";
 import "./index.css";
 import Home from "./Components/Home";
 import Projects from "./Components/Projects";
@@ -11,8 +10,7 @@ import Footer from "./Components/Footer";
 function App() {
   const [windowTop, setWindowTop] = useState(true);
   const [active, setActive] = useState("");
-  const [screenSize, setScreenSize] = useState(false);
-  const changeThemeColor=(color)=> {
+  const changeThemeColor = (color) => {
     let metaThemeColor = document.querySelector("meta[name=theme-color]");
     if (!metaThemeColor) {
       metaThemeColor = document.createElement("meta");
@@ -20,7 +18,7 @@ function App() {
       document.head.appendChild(metaThemeColor);
     }
     metaThemeColor.setAttribute("content", color);
-  }
+  };
   useEffect(() => {
     const handleScrollTop = () => {
       setWindowTop(window.scrollY === 0);
@@ -31,12 +29,7 @@ function App() {
     };
   }, []);
   useEffect(() => {
-    document.documentElement.style.setProperty(
-      "--header-height",
-      window.scrollY === 0 ? "0px" : `72px`
-    )
     changeThemeColor(windowTop ? "#efefef" : "#FFF");
-    console.log(windowTop);
   }, [windowTop]);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -50,9 +43,9 @@ function App() {
       },
       { threshold: 0.2 }
     );
-
-    sections.forEach((section) => observer.observe(section));
-
+    if (window.screen.width > 767) {
+      sections.forEach((section) => observer.observe(section));
+    }
     return () => {
       sections.forEach((section) => observer.unobserve(section));
     };
@@ -75,7 +68,7 @@ function App() {
   };
 
   return (
-    <div className={`flex-col relative min-h-screen`}>
+    <div className={`flex-col relative min-h-screen pt-[72px]`}>
       <Header
         windowTop={windowTop}
         scrollToSection={scrollToSection}
@@ -87,7 +80,6 @@ function App() {
       <Experience />
       <Skills />
       <Footer />
-      <ContactBar />
     </div>
   );
 }

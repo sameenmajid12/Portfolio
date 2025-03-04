@@ -28,9 +28,7 @@ const experiences = [
       "MongoDB",
       "Authentication Systems",
     ],
-    externalLink: {
-      url: "https://www.linkedin.com/in/sameen-majid-8b31591ba/",
-    },
+    externalLink: "https://humun.org/",
   },
 ];
 function Experience() {
@@ -49,46 +47,52 @@ function Experience() {
       </div>
       {experiences.map((experience, index) => {
         return (
-          <motion.div
-            initial={{ opacity: 0}}
-            whileInView={{ opacity: 1}}
-            transition={{ duration: 1 }}
-            viewport={{ once: true, amount: 0.1 }}
-            className="bg-white w-full py-5 px-5 flex [@media(max-width:1200px)]:flex-col gap-x-5 rounded-2xl"
-          >
-            <p className="text-[clamp(0.875rem,1.5vw,1.25rem)] whitespace-nowrap">{experience.date}</p>
-            <div className="flex flex-col">
-              <h3 className="text-[clamp(0.875rem,1.5vw,1.5rem)] text-2xl font-bold pb-1">
-                {experience.role} • {experience.company}{" "}
-                <i className="fa-solid fa-square-arrow-up-right text-[#A75FFF] text-[clamp(1.25rem,1.5vw,1.875rem)] pl-2"></i>
-              </h3>
-              <p className="text-[#6F6F6F] text-[clamp(0.75rem,1vw,1rem)]">{experience.description}</p>
-              <div className="pt-10 [@media(max-width:1200px)]:pt-4 flex gap-x-2 items-center">
-                <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
-                  <i class="fa-solid fa-microchip text-2xl text-[#A75FFF]"></i>
-                  {experience.skills.map((skill, index) => {
-                    return (
-                      <button className="text-[clamp(0.625rem,1.25vw,0.75rem)] bg-[#D3AFFF] px-5 [@media(max-width:1200px)]:px-3 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full">
-                        {skill}
-                      </button>
-                    );
-                  })}
+          <a key={index} href={experience.externalLink} target="_blank" rel="noopener noreferrer">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true, amount: 0.1 }}
+              className="bg-white w-full py-5 px-5 flex [@media(max-width:1200px)]:flex-col gap-x-5 rounded-2xl hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all"
+            >
+              <p className="text-[clamp(0.875rem,1.5vw,1.25rem)] whitespace-nowrap">
+                {experience.date}
+              </p>
+              <div className="flex flex-col">
+                <h3 className="text-[clamp(0.875rem,1.5vw,1.5rem)] text-2xl font-bold pb-1">
+                  {experience.role} • {experience.company}{" "}
+                  <i className="fa-solid fa-square-arrow-up-right text-[#A75FFF] text-[clamp(1.25rem,1.5vw,1.875rem)] pl-2"></i>
+                </h3>
+                <p className="text-[#6F6F6F] text-[clamp(0.75rem,1vw,1rem)]">
+                  {experience.description}
+                </p>
+                <div className="pt-10 [@media(max-width:1200px)]:pt-4 flex gap-x-2 items-center">
+                  <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
+                    <i className="fa-solid fa-microchip text-2xl text-[#A75FFF]"></i>
+                    {experience.skills.map((skill, index) => {
+                      return (
+                        <button key={(skill + index)} className="text-[clamp(0.625rem,1.25vw,0.75rem)] bg-[#D3AFFF] px-5 [@media(max-width:1200px)]:px-3 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full">
+                          {skill}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="max-w-[100px] aspect-w-1 aspect-h-1 [@media(max-width:1200px)]:hidden">
-              <img
-                className="border-1 border-gray-200 rounded-md "
-                src="/assets/humun_logo.jpg"
-              ></img>
-            </div>
-          </motion.div>
+              <div className="max-w-[100px] aspect-w-1 aspect-h-1 [@media(max-width:1200px)]:hidden">
+                <img
+                  className="border-1 border-gray-200 rounded-md "
+                  src="/assets/humun_logo.jpg"
+                ></img>
+              </div>
+            </motion.div>
+          </a>
         );
       })}
 
       <motion.div
-        initial={{ opacity: 0}}
-        whileInView={{opacity: 1}}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true, amount: 1 }}
       >

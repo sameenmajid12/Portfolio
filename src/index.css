@@ -11,7 +11,7 @@
   --animate-slide-in:slideIn 0.5s ease;
 }
 :root{
-  --header-height:0px;
+  --header-height:72px;
 }
 html{
   font-family: 'Inria Sans';
@@ -23,7 +23,6 @@ body{
   background-color: #EFEFEF;
   min-height: 100dvh;
   width:100dvw;
-  margin-top: var(--header-height);
 }
 html, body, #root {
   height: 100%;

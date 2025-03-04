@@ -4,7 +4,9 @@ import HeaderMenu from "./HeaderMenu";
 function Header({ windowTop, scrollToSection, checkActive, changeThemeColor }) {
   const [menuVisibility, setMenuVisibility] = useState(false);
   useEffect(()=>{
-    changeThemeColor(menuVisibility?'#fff':'#efefef')
+    if(windowTop){
+      changeThemeColor(menuVisibility?'#fff':'#efefef')
+    }
   },[menuVisibility])
   const toggleMenu = () => {
     setMenuVisibility((prev) => !prev);
@@ -18,7 +20,7 @@ function Header({ windowTop, scrollToSection, checkActive, changeThemeColor }) {
         className={`flex justify-between sidePadding h-18 items-center ${
           !windowTop
             ? "bg-white shadow-md fixed top-0 right-0 left-0 z-110"
-            : "relative shadow-none bg-transparent"
+            : "absolute top-0 right-0 left-0 z-110 shadow-none bg-transparent"
         }`}
       >
         <img className="w-auto h-[clamp(1.25rem,1.5vw,1.5rem)]" src="/assets/logo.png"></img>

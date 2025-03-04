@@ -58,11 +58,7 @@ function Skills() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-20 text-center gap-x-4">
         {skillCategories.map((category, index) => (
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true, amount: 1 }}
+          <div
             className="flex flex-col items-center md:items-start"
             key={index}
           >
@@ -71,7 +67,7 @@ function Skills() {
             </h2>
             <div className="flex gap-x-2 flex-wrap gap-y-1 justify-center md:justify-start">
               {category.skills.map((skill, skillIndex) => (
-                <div className="flex items-center gap-x-2 font-bold text-[clamp(1rem,1.25vw,1.125rem)]">
+                <div key={skillIndex} className="flex items-center gap-x-2 font-bold text-[clamp(1rem,1.25vw,1.125rem)]">
                   {skill.name}
                   <div className="flex items-center gap-x-[2px]">
                     <img className="max-h-5 max-w-7" src={skill.image}></img>
@@ -80,7 +76,7 @@ function Skills() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>
