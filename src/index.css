@@ -21,9 +21,12 @@ html{
 }
 body{
   background-color: #EFEFEF;
+  overflow-y: hidden;
+
 }
 html, body, #root {
   min-height: 100svh;
+  touch-action: manipulation;
   width:100dvw;
   overscroll-behavior: contain;
 }
