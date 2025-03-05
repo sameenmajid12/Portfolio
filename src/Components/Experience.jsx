@@ -35,7 +35,7 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="min-h-[calc(100dvh-72px)] sidePadding py-10 flex flex-col gap-y-10"
+      className="min-h-[calc(100svh-var(--header-height))] sidePadding py-10 flex flex-col gap-y-10"
     >
       <div className="flex md:justify-start justify-center">
         <div className="w-max relative text-5xl font-bold">
@@ -47,34 +47,51 @@ function Experience() {
       </div>
       {experiences.map((experience, index) => {
         return (
-          <a key={index} href={experience.externalLink} target="_blank" rel="noopener noreferrer">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true, amount: 0.1 }}
-              className="bg-white w-full py-5 px-5 flex [@media(max-width:1200px)]:flex-col gap-x-5 rounded-2xl hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all"
-              style={{willChange:'opacity'}}
-            >
+          <a
+            key={index}
+            href={experience.externalLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="bg-white w-full py-5 px-5 flex [@media(max-width:1200px)]:flex-col gap-x-5 rounded-2xl hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all">
               <p className="text-[clamp(0.875rem,1.5vw,1.25rem)] whitespace-nowrap">
                 {experience.date}
               </p>
               <div className="flex flex-col">
-                <h3 className="text-[clamp(0.875rem,1.5vw,1.5rem)] text-2xl font-bold pb-1">
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: true }}
+                  className="text-[clamp(0.875rem,1.5vw,1.5rem)] text-2xl font-bold pb-1"
+                >
                   {experience.role} • {experience.company}{" "}
-                  <i className="fa-solid fa-square-arrow-up-right text-[#A75FFF] text-[clamp(1.25rem,1.5vw,1.875rem)] pl-2"></i>
-                </h3>
-                <p className="text-[#6F6F6F] text-[clamp(0.75rem,1vw,1rem)]">
+                  <i className="fa-solid fa-square-arrow-up-right text-[#A75FFF] text-[clamp(1.25rem,1.5vw,1.875rem)] pl-2 [@media(max-width:444px)]:pl-0 [@media(max-width:420px)]:pl-2"></i>
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: true }}
+                  className="text-[#6F6F6F] text-[clamp(0.75rem,1vw,1rem)]"
+                >
                   {experience.description}
-                </p>
+                </motion.p>
                 <div className="pt-10 [@media(max-width:1200px)]:pt-4 flex gap-x-2 items-center">
                   <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
                     <i className="fa-solid fa-microchip text-2xl text-[#A75FFF]"></i>
                     {experience.skills.map((skill, index) => {
                       return (
-                        <button key={(skill + index)} className="text-[clamp(0.625rem,1.25vw,0.75rem)] bg-[#D3AFFF] px-5 [@media(max-width:1200px)]:px-3 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full">
+                        <motion.button
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                          viewport={{ once: true }}
+                          key={skill + index}
+                          className="text-[clamp(0.625rem,1.25vw,0.75rem)] bg-[#D3AFFF] px-5 [@media(max-width:1200px)]:px-3 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full"
+                        >
                           {skill}
-                        </button>
+                        </motion.button>
                       );
                     })}
                   </div>
@@ -86,17 +103,17 @@ function Experience() {
                   src="/assets/humun_logo.jpg"
                 ></img>
               </div>
-            </motion.div>
+            </div>
           </a>
         );
       })}
 
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        initial={{ translateX: "-5dvw", opacity: 0 }}
+        whileInView={{ translateX: "0", opacity: 1 }}
+        transition={{ duration: 0.7 }}
         viewport={{ once: true, amount: 1 }}
-        style={{willChange:'opacity'}}
+        style={{ willChange: "opacity" }}
       >
         <a
           href="https://www.linkedin.com/in/sameen-majid-8b31591ba/"

@@ -54,7 +54,7 @@ const projects = [
       "AWS",
     ],
     status: "In Progress",
-    link:"https://github.com/Saminraiyan12/NestFrames-Backend"
+    link: "https://github.com/Saminraiyan12/NestFrames-Backend",
   },
   {
     title: "InterModal",
@@ -71,10 +71,10 @@ const projects = [
       </>
     ),
     imageUrl: "/assets/InterModalSS.png",
-    logoUrl: "",
+    logoUrl: "/assets/intermodal.svg",
     tools: ["Swift", "SwiftUI", "Firebase", "XCode"],
     status: "Submitted to HackRU Fall 2024",
-    link:"https://devpost.com/software/intermodal"
+    link: "https://devpost.com/software/intermodal",
   },
 ];
 
@@ -87,7 +87,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-[calc(100dvh-var(--spacing-header))] sidePadding py-10 flex flex-col gap-y-15 md:gap-y-10"
+      className="min-h-[calc(100svh-var(--header-height))] sidePadding py-10 flex flex-col gap-y-15 md:gap-y-10"
     >
       <div className="flex md:justify-start justify-center">
         <div className="w-max relative text-5xl font-bold">
@@ -106,13 +106,9 @@ function Projects() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <motion.div
-              initial={{ opacity: 0}}
-              whileInView={{ opacity: 1}}
-              transition={{ duration: 1 }}
-              viewport={{ once: true, amount: 0.1 }}
+            <div
+              key={project.title}
               className="cursor-pointer flex flex-col md:flex-row bg-white w-full  flex gap-x-5 gap-y-2 p-5 rounded-2xl md:rounded-3xl relative hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all"
-              style={{willChange:'opacity'}}
             >
               <img
                 className="w-full md:w-[clamp(15rem,20vw,19.375rem)] object-cover rounded-md md:rounded-xl border border-[rgba(0,0,0,0.10)]"
@@ -120,46 +116,69 @@ function Projects() {
                 alt={project.title}
               />
               <div className="flex flex-col gap-y-1 justify-between max-w-full">
-                <div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: true }}
+                >
                   <h2 className="flex gap-x-2 font-bold text-[clamp(1.25rem,2vw,1.5rem)] items-center pb-1">
                     {project.title}
                     {project.logoUrl && (
                       <img
-                        className="h-7 w-auto"
+                        className={`w-auto ${index === 2 ? "h-5" : "h-7"}`}
                         src={project.logoUrl}
                         alt={`${project.title} Logo`}
                       />
                     )}
                   </h2>
-                  <p className="text-[clamp(0.75rem,1vw,1rem)] text-[#6F6F6F] w-full mb-2">
+                  <p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    viewport={{ once: true }}
+                    className="text-[clamp(0.75rem,1vw,1rem)] text-[#6F6F6F] w-full mb-2"
+                  >
                     {project.description}
                   </p>
-                </div>
+                </motion.div>
                 <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
                   <i className="fa-solid fa-screwdriver-wrench text-[#FF6868]"></i>
                   {project.tools.map((tool, i) => (
-                    <button
+                    <motion.button
                       key={i}
                       className="text-[clamp(0.625rem,1.25vw,0.75rem)] bg-[#FFB4B4] px-5 h-[clamp(1.125rem,1.75vw,1.5rem)] text-white rounded-full"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: i * 0.1 }}
+                      viewport={{ once: true }}
                     >
                       {tool}
-                    </button>
+                    </motion.button>
                   ))}
                 </div>
               </div>
-              <span className="absolute right-0 top-0 transform -translate-y-[100%] font-bold text-[clamp(0.875rem,1.25vw,1rem)]">
+              <motion.span
+                initial={{ translateX: 20, opacity: 0 }}
+                whileInView={{ translateX: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.5,
+                }}
+                viewport={{ once: true }}
+                className="absolute right-0 top-0 transform -translate-y-[100%] font-bold text-[clamp(0.875rem,1.25vw,1rem)]"
+              >
                 {project.status}
-              </span>
-            </motion.div>
+              </motion.span>
+            </div>
           </a>
         ))}
         <motion.div
-          initial={{ opacity: 0}}
-          whileInView={{ opacity: 1}}
-          transition={{ duration: 0.5 }}
+          initial={{ translateX: "-5dvw", opacity: 0 }}
+          whileInView={{ translateX: "0px", opacity: 1 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true, amount: 1 }}
           className="flex justify-center font-bold items-center pb-5"
-          style={{willChange:'opacity'}}
+          style={{ willChange: "opacity" }}
         >
           <div className="relative pr-2 text-[clamp(1rem, 1.25vw,1.25rem)]">
             Stay tuned for more!

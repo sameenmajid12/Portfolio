@@ -25,10 +25,8 @@ body{
 
 }
 html, body, #root {
-  min-height: 100svh;
-  touch-action: manipulation;
+  min-height: 100%;
   width:100dvw;
-  overscroll-behavior: contain;
 }
 .sidePadding{
   padding-left:clamp(9rem,9vw,10.9375rem);
