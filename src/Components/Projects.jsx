@@ -133,10 +133,6 @@ function Projects() {
                     )}
                   </h2>
                   <p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
-                    viewport={{ once: true }}
                     className="text-[clamp(0.75rem,1vw,1rem)] text-[#6F6F6F] w-full mb-2"
                   >
                     {project.description}

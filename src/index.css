@@ -28,6 +28,7 @@ html, body, #root {
   min-height: 100%;
   width:100dvw;
 }
+
 .sidePadding{
   padding-left:clamp(9rem,9vw,10.9375rem);
   padding-right:clamp(9rem,9vw,10.9375rem);
