@@ -67,7 +67,7 @@ function Header({ windowTop, scrollToSection, checkActive, changeThemeColor }) {
           <i  onClick={toggleMenu} className="fa-solid fa-bars"></i>
         </div>
       </div>
-      {menuVisibility && <HeaderMenu toggleVisibility={toggleMenu} scrollToSection={scrollToSection}/>}
+      {menuVisibility && <HeaderMenu toggleVisibility={toggleMenu} scrollToSection={scrollToSection} checkActive={checkActive}/>}
     </>
   );
 }

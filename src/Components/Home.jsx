@@ -16,7 +16,7 @@ function Home({ scrollToSection }) {
 
     generateParticles();
   }, []);
-
+  
   return (
     <section
       id="home"

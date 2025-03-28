@@ -43,9 +43,7 @@ function App() {
       },
       { threshold: 0.2 }
     );
-    if (window.screen.width > 767) {
-      sections.forEach((section) => observer.observe(section));
-    }
+    sections.forEach((section) => observer.observe(section));
     return () => {
       sections.forEach((section) => observer.unobserve(section));
     };
@@ -66,7 +64,9 @@ function App() {
       });
     }
   };
-
+  useEffect(()=>{
+    console.log(active);
+  },[active]);
   return (
     <div className={`flex-col relative min-h-screen pt-[72px]`}>
       <Header
@@ -74,6 +74,8 @@ function App() {
         scrollToSection={scrollToSection}
         checkActive={checkActive}
         changeThemeColor={changeThemeColor}
+        active={active}
+        setActive={setActive}
       />
       <Home scrollToSection={scrollToSection} />
       <Projects />
