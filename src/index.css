@@ -14,7 +14,7 @@
   --header-height:72px;
 }
 html{
-  font-family: 'Inria Sans';
+  font-family:'Inria Sans';
   color:#313131;
   scroll-behavior: smooth;
   overflow-x: hidden;

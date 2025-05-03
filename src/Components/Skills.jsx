@@ -15,8 +15,9 @@ function Skills() {
       skills: [
         { name: "HTML", image: "/assets/html.png" },
         { name: "CSS", image: "/assets/css.png" },
-        { name: "TailwindCSS", image: "/assets/tailwind.png" },
         { name: "React", image: "/assets/react.png" },
+        { name: "TailwindCSS", image: "/assets/tailwind.png" },
+        { name:"React native", image:"/assets/react.png"}
       ],
     },
     {

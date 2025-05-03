@@ -1,10 +1,31 @@
 import { motion } from "framer-motion";
 const experiences = [
   {
-    date: "November 2024 - Present",
+    date: "Apr 2025 - Present",
+    role: "Software Engineering Intern",
+    company: "Deerect",
+    //companyLogo: "/assets/deerectlogo.png",
+    description: (
+      <>
+        Collaborated with a team of 4 to <strong>build an innovative platform aimed at
+        simplifying tax lien investments</strong> for individuals. <strong>Designed and
+        developed</strong> the platform’s initial mockups for <strong>8 different sections</strong> on
+        Figma, including the landing page, user dashboard, settings interface,
+        and waitlist page. Built a <strong>responsive waitlist</strong> page using <strong>Next.js and
+        Tailwind CSS</strong>, integrating Google Sheets via Google APIs to securely
+        store over <strong>150 user sign-ups</strong>. Developed a <strong>streamlined communication
+        channel</strong>   between users and our team using Resend, <strong>improving response
+        efficiency and user engagement.</strong>
+      </>
+    ),
+    skills: ["UI/UX Design", "Figma", "Next.js", "React.js", "Google APIS", "Resend"],
+    externalLink: "https://deerect.net/",
+  },
+  {
+    date: "Nov 2024 - Present",
     role: "Frontend & Backend Developer",
     company: "Humanity Unleashed",
-    companyLogo: "/assets/humun_logo.jpg",
+    //companyLogo: "/assets/humun_logo.jpg",
     description: (
       <>
         <strong>Coauthored a published research paper</strong> by analyzing and
@@ -54,7 +75,7 @@ function Experience() {
             rel="noopener noreferrer"
           >
             <div className="bg-white w-full py-5 px-5 flex [@media(max-width:1200px)]:flex-col gap-x-5 rounded-2xl hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all">
-              <p className="text-[clamp(0.875rem,1.5vw,1.25rem)] whitespace-nowrap">
+              <p className="text-[clamp(0.875rem,1.5vw,1.25rem)] whitespace-nowrap pr-5">
                 {experience.date}
               </p>
               <div className="flex flex-col">
@@ -79,7 +100,7 @@ function Experience() {
                 </motion.p>
                 <div className="pt-10 [@media(max-width:1200px)]:pt-4 flex gap-x-2 items-center">
                   <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
-                    <i className="fa-solid fa-microchip text-2xl text-[#A75FFF]"></i>
+                    <i className="fa-solid fa-microchip text-2xl text-[#A75FFF] pr-1"></i>
                     {experience.skills.map((skill, index) => {
                       return (
                         <motion.button
@@ -97,12 +118,12 @@ function Experience() {
                   </div>
                 </div>
               </div>
-              <div className="max-w-[100px] aspect-w-1 aspect-h-1 [@media(max-width:1200px)]:hidden">
+              {/*<div className="max-w-[100px] aspect-w-1 aspect-h-1 [@media(max-width:1200px)]:hidden">
                 <img
-                  className="border-1 border-gray-200 rounded-md "
-                  src="/assets/humun_logo.jpg"
+                  className="border-1 border-gray-200 rounded-md max-w-[70px]"
+                  src={experience.companyLogo}
                 ></img>
-              </div>
+              </div>*/}
             </div>
           </a>
         );

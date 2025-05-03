@@ -26,7 +26,7 @@ const projects = [
       "REST APIs",
     ],
     status: "In Progress",
-    link: "https://github.com/Saminraiyan12/Lume",
+    link: "https://github.com/sameenmajid12/Lume",
   },
   {
     title: "NestFrames",
@@ -54,7 +54,25 @@ const projects = [
       "AWS",
     ],
     status: "In Progress",
-    link: "https://github.com/Saminraiyan12/NestFrames-Backend",
+    link: "https://github.com/sameenmajid12/NestFrames-Backend",
+  },
+  {
+    title: "BrainTap",
+    description: (
+      <>
+        A <strong>React Native memory game</strong> that helps users improve{" "}
+        <strong>recall and sequencing skills</strong>. Players flip cards to
+        reveal numbers and <strong>tap them in the correct order</strong>.
+        BrainTap features a <strong>clean UI</strong>, smooth animations, and
+        uses <strong>React Native MMKV</strong> for fast and efficient local
+        storage.
+      </>
+    ),
+    imageUrl: "/assets/BrainTap.png",
+    logoUrl: "/assets/BrainTapLogo.png",
+    tools: ["React Native", "JavaScript", "React Native MMKV", "UI/UX Design"],
+    status: "Completed",
+    link: "https://github.com/sameenmajid12/BrainTap",
   },
   {
     title: "InterModal",
@@ -98,7 +116,7 @@ function Projects() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-y-10">
+      <div className="flex flex-col gap-y-10 ">
         {projects.map((project, index) => (
           <a
             key={index}
@@ -132,14 +150,12 @@ function Projects() {
                       />
                     )}
                   </h2>
-                  <p
-                    className="text-[clamp(0.75rem,1vw,1rem)] text-[#6F6F6F] w-full mb-2"
-                  >
+                  <p className="text-[clamp(0.75rem,1vw,1rem)] text-[#6F6F6F] w-full mb-2">
                     {project.description}
                   </p>
                 </motion.div>
                 <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
-                  <i className="fa-solid fa-screwdriver-wrench text-[#FF6868]"></i>
+                  <i className="fa-solid fa-screwdriver-wrench text-[#FF6868] pr-1"></i>
                   {project.tools.map((tool, i) => (
                     <motion.button
                       key={i}
