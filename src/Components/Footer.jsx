@@ -17,7 +17,7 @@ function Footer() {
         >
           <i className="cursor-pointer fa-brands fa-github"></i>
         </a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sameenmajid12@gmail.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samin.raiyan1@gmail.com" target="_blank" rel="noopener noreferrer">
           <i className="cursor-pointer fa-solid fa-inbox"></i>
         </a>
       </div>
