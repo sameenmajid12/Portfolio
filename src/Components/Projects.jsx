@@ -59,6 +59,7 @@ const projects = [
     link: "https://github.com/sameenmajid12/NestFrames-Backend",
     showCaseImages: [
       "nestFrames1.png",
+      "NestFramesSS.png",
       "nestFrames2.png",
       "nestFrames3.png",
       "nestFrames4.png",
