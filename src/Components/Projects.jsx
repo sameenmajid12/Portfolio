@@ -222,20 +222,26 @@ function Projects() {
             </div>
           </div>
         ))}
-        <motion.div
-          initial={{ translateX: "-5dvw", opacity: 0 }}
-          whileInView={{ translateX: "0px", opacity: 1 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true, amount: 1 }}
-          className="flex justify-center font-bold items-center pb-5"
-          style={{ willChange: "opacity" }}
+       <motion.div
+        initial={{ translateX: "-5dvw", opacity: 0 }}
+        whileInView={{ translateX: "0", opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true, amount: 1 }}
+        style={{ willChange: "opacity" }}
+      >
+        <a
+          href="https://www.github.com/sameenmajid12"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <div className="relative pr-2 text-[clamp(1rem, 1.25vw,1.25rem)]">
-            Stay tuned for more!
-            <span className="w-[30%] absolute h-[3px] bg-[#FF6868] rounded-md bottom-[-2px] left-0"></span>
+          <div className="flex justify-center flex-col md:flex-row gap-y-2 w-full items-center gap-x-3 group cursor-pointer">
+            <p className="font-bold text-[#313131] md:text-[#6F6F6F] text-center text-[clamp(0.875rem,1.5vw,1rem)] group-hover:text-[#313131]">
+              Curious how I built these? Checkout my Github!
+            </p>
+            <i className="fa-brands fa-github text-[clamp(1.125rem,1.5vw,1.5rem)] text-red md:text-[#FFc3c3] group-hover:text-red"></i>
           </div>
-          <i className="fa-solid fa-folder-open text-[#FF6868]"></i>
-        </motion.div>
+        </a>
+      </motion.div>
       </div>
       {showCaseProject.isVisible && (
         <ShowCaseModal

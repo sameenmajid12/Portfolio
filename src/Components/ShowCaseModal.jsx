@@ -1,6 +1,18 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function ShowCaseModal({ project, setProject }) {
+  useEffect(() => {
+    const preventTouch = (e) => e.preventDefault();
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    document.addEventListener("touchmove", preventTouch, { passive: false });
+
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      document.removeEventListener("touchmove", preventTouch);
+    };
+  }, []);
   const [currImgIndex, setCurrImgIndex] = useState(0);
   const images = project.data.showCaseImages;
   const touchStartX = useRef(null);
@@ -25,7 +37,7 @@ function ShowCaseModal({ project, setProject }) {
 
   const handleSwipe = () => {
     const diff = touchStartX.current - touchEndX.current;
-    const threshold = 50; 
+    const threshold = 50;
     if (Math.abs(diff) > threshold) {
       if (diff > 0) {
         shiftIndex(currImgIndex + 1);
@@ -41,14 +53,18 @@ function ShowCaseModal({ project, setProject }) {
         onClick={() => setProject({ isVisible: false, data: null })}
         className="fa-solid fa-circle-xmark absolute right-5 top-5 text-2xl text-white cursor-pointer"
       ></i>
-      <i
-        onClick={() => shiftIndex(currImgIndex + 1)}
-        className="none md:inline-block fa-solid fa-circle-chevron-right absolute right-5 top-[50%] text-red text-4xl transform -translate-y-1/2 cursor-pointer"
-      ></i>
-      <i
-        onClick={() => shiftIndex(currImgIndex - 1)}
-        className="none md:inline-block fa-solid fa-circle-chevron-left absolute left-5 top-[50%] text-red text-4xl transform -translate-y-1/2 cursor-pointer"
-      ></i>
+      <div className="hidden md:block">
+        <i
+          onClick={() => shiftIndex(currImgIndex + 1)}
+          className="fa-solid fa-circle-chevron-right absolute right-5 top-[50%] text-red text-4xl transform -translate-y-1/2 cursor-pointer"
+        ></i>
+      </div>
+      <div className="hidden md:block">
+        <i
+          onClick={() => shiftIndex(currImgIndex - 1)}
+          className="fa-solid fa-circle-chevron-left absolute left-5 top-[50%] text-red text-4xl transform -translate-y-1/2 cursor-pointer"
+        ></i>
+      </div>
 
       <div
         className="w-[100vw] md:w-auto absolute top-[50%] right-[50%] transform -translate-y-1/2 translate-x-1/2"
@@ -60,7 +76,6 @@ function ShowCaseModal({ project, setProject }) {
             className="max-w-[100vw] md:max-w-[70vw] max-h-[80dvh] object-contain mx-auto"
             src={`/assets/${images[currImgIndex]}`}
             controls
-            autoPlay
             loop
           />
         ) : (

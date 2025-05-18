@@ -7,18 +7,29 @@ const experiences = [
     //companyLogo: "/assets/deerectlogo.png",
     description: (
       <>
-        Collaborated with a team of 4 to <strong>build an innovative platform aimed at
-        simplifying tax lien investments</strong> for individuals. <strong>Designed and
-        developed</strong> the platform’s initial mockups for <strong>8 different sections</strong> on
-        Figma, including the landing page, user dashboard, settings interface,
-        and waitlist page. Built a <strong>responsive waitlist</strong> page using <strong>Next.js and
-        Tailwind CSS</strong>, integrating Google Sheets via Google APIs to securely
-        store over <strong>150 user sign-ups</strong>. Developed a <strong>streamlined communication
-        channel</strong>   between users and our team using Resend, <strong>improving response
-        efficiency and user engagement.</strong>
+        Collaborated with a team of 4 to{" "}
+        <strong>
+          build an innovative platform aimed at simplifying tax lien investments
+        </strong>{" "}
+        for individuals. <strong>Designed and developed</strong> the platform’s
+        initial mockups for <strong>8 different sections</strong> on Figma,
+        including the landing page, user dashboard, settings interface, and
+        waitlist page. Built a <strong>responsive waitlist</strong> page using{" "}
+        <strong>Next.js and Tailwind CSS</strong>, integrating Google Sheets via
+        Google APIs to securely store over <strong>150 user sign-ups</strong>.
+        Developed a <strong>streamlined communication channel</strong> between
+        users and our team using Resend,{" "}
+        <strong>improving response efficiency and user engagement.</strong>
       </>
     ),
-    skills: ["UI/UX Design", "Figma", "Next.js", "React.js", "Google APIS", "Resend"],
+    skills: [
+      "UI/UX Design",
+      "Figma",
+      "Next.js",
+      "React.js",
+      "Google APIS",
+      "Resend",
+    ],
     externalLink: "https://deerect.net/",
   },
   {
@@ -118,12 +129,6 @@ function Experience() {
                   </div>
                 </div>
               </div>
-              {/*<div className="max-w-[100px] aspect-w-1 aspect-h-1 [@media(max-width:1200px)]:hidden">
-                <img
-                  className="border-1 border-gray-200 rounded-md max-w-[70px]"
-                  src={experience.companyLogo}
-                ></img>
-              </div>*/}
             </div>
           </a>
         );
@@ -142,12 +147,10 @@ function Experience() {
           rel="noopener noreferrer"
         >
           <div className="flex justify-center flex-col md:flex-row gap-y-2 w-full items-center gap-x-3 group cursor-pointer">
-            <p className="font-bold text-[#313131] md:text-[#6F6F6F] text-center text-[clamp(0.75rem,1.5vw,1rem)] group-hover:text-[#313131]">
-              I’m always looking for the next opportunity to apply my skills.
-              Let’s get in touch and discuss how I can help bring your project
-              to life!
+            <p className="font-bold text-[#313131] md:text-[#6F6F6F] text-center text-[clamp(0.875rem,1.5vw,1rem)] group-hover:text-[#313131]">
+              I'm always eager to work on new projects. Let’s connect and create something great!
             </p>
-            <i className="fa-brands fa-linkedin text-[clamp(1rem,1.5vw,1.5rem)] text-[#A75FFF] md:text-[#D3AFFF] group-hover:text-[#A75FFF]"></i>
+            <i className="fa-brands fa-linkedin text-[clamp(1.125rem,1.5vw,1.5rem)] text-[#A75FFF] md:text-[#D3AFFF] group-hover:text-[#A75FFF]"></i>
           </div>
         </a>
       </motion.div>
