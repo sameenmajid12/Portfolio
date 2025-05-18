@@ -87,10 +87,10 @@ function Skills() {
               {category.skills.map((skill, skillIndex) => (
                 <motion.div
                   key={skillIndex}
-                  initial={{ opacity: 0, y: 5 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: skillIndex * 0.1 }}
+                  transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
                   className="flex items-center gap-x-2 font-bold text-[clamp(1rem,1.25vw,1.125rem)]"
                 >
                   {skill.name}

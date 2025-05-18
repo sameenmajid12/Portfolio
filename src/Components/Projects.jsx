@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import {useState} from 'react';
+import ShowCaseModal from "./ShowCaseModal";
 
 const projects = [
   {
@@ -16,13 +17,14 @@ const projects = [
     ),
     imageUrl: "/assets/LumeSS.png",
     logoUrl: "/assets/LumeLogo.png",
+    showCaseImages: ["lume1.png", "lume2.png", "lume3.png"],
     tools: [
       "React.js",
       "Express.js",
       "Node.js",
       "MongoDB",
       "Figma",
-      "UI/UX",
+      "UI/UX Design",
       "REST APIs",
     ],
     status: "In Progress",
@@ -55,6 +57,12 @@ const projects = [
     ],
     status: "In Progress",
     link: "https://github.com/sameenmajid12/NestFrames-Backend",
+    showCaseImages: [
+      "nestFrames1.png",
+      "nestFrames2.png",
+      "nestFrames3.png",
+      "nestFrames4.png",
+    ],
   },
   {
     title: "BrainTap",
@@ -70,9 +78,34 @@ const projects = [
     ),
     imageUrl: "/assets/BrainTap.png",
     logoUrl: "/assets/BrainTapLogo.png",
-    tools: ["React Native", "JavaScript", "React Native MMKV", "UI/UX Design"],
+    showCaseImages: ["brainTap1.png", "brainTap2.mp4"],
+    tools: ["React Native", "JavaScript", "React Native MMKV", "UI/UX Design", "Figma"],
     status: "Completed",
     link: "https://github.com/sameenmajid12/BrainTap",
+  },
+  {
+    title: "Elevate",
+    description: (
+      <>
+        Elevate is a personal goal tracking app created to{" "}
+        <strong>practice building with React Native</strong>. It allows users to{" "}
+        <strong>set, view, and track goals</strong> over time using{" "}
+        <strong>robust date and time handling</strong> to ensure goals are{" "}
+        <strong>accurately stored and updated</strong>. With{" "}
+        <strong>persistent storage powered by AsyncStorage</strong>, Elevate
+        keeps your progress saved <strong>even when the app is closed</strong>.
+      </>
+    ),
+    imageUrl: "/assets/goalTrack.png",
+    logoUrl: "/assets/goalTrackLogo.png",
+    showCaseImages: [
+      "goalTrack1.png",
+      "goalTrack2.png",
+      "goalTrack3.png",
+    ],
+    tools: ["React Native", "Mobile App Development", "UI/UX Design", "Javascript", "Figma"],
+    status: "Completed",
+    link: "https://github.com/sameenmajid12/",
   },
   {
     title: "InterModal",
@@ -90,6 +123,12 @@ const projects = [
     ),
     imageUrl: "/assets/InterModalSS.png",
     logoUrl: "/assets/intermodal.svg",
+    showCaseImages: [
+      "intermodal1.png",
+      "intermodal2.png",
+      "intermodal3.png",
+      "intermodal4.png",
+    ],
     tools: ["Swift", "SwiftUI", "Firebase", "XCode"],
     status: "Submitted to HackRU Fall 2024",
     link: "https://devpost.com/software/intermodal",
@@ -97,11 +136,10 @@ const projects = [
 ];
 
 function Projects() {
-  const navigate = useNavigate();
-  const navToProject = (route) => {
-    navigate(`${route}`);
-  };
-
+  const [showCaseProject, setShowCaseProject] = useState({
+    isVisible: false,
+    data: null,
+  });
   return (
     <section
       id="projects"
@@ -118,11 +156,11 @@ function Projects() {
 
       <div className="flex flex-col gap-y-10 ">
         {projects.map((project, index) => (
-          <a
+          <div
             key={index}
-            href={project.link || "#"}
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={() =>
+              setShowCaseProject({ isVisible: true, data: project })
+            }
           >
             <div
               key={project.title}
@@ -182,7 +220,7 @@ function Projects() {
                 {project.status}
               </motion.span>
             </div>
-          </a>
+          </div>
         ))}
         <motion.div
           initial={{ translateX: "-5dvw", opacity: 0 }}
@@ -199,6 +237,12 @@ function Projects() {
           <i className="fa-solid fa-folder-open text-[#FF6868]"></i>
         </motion.div>
       </div>
+      {showCaseProject.isVisible && (
+        <ShowCaseModal
+          project={showCaseProject}
+          setProject={setShowCaseProject}
+        />
+      )}
     </section>
   );
 }
