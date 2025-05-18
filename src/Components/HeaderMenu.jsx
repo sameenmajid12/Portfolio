@@ -92,8 +92,9 @@ function HeaderMenu({ toggleVisibility, scrollToSection, checkActive }) {
           ""
         )}
       </div>
-      <hr className="text-[rgba(0,0,0,0.15)] mb-1"></hr>
-      <div className="text-3xl flex gap-x-5 text-[#474747] justify-start">
+      <div className="flex-1"></div>
+      <hr className="text-[rgba(0,0,0,0.15)]"></hr>
+      <div className="text-3xl flex gap-x-5 text-[#474747] justify-center">
         <a
           href="https://www.linkedin.com/in/sameen-majid-8b31591ba/"
           target="_blank"
