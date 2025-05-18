@@ -77,6 +77,8 @@ function ShowCaseModal({ project, setProject }) {
             src={`/assets/${images[currImgIndex]}`}
             controls
             loop
+            preload="metadata"
+            poster={`/assets/${images[currImgIndex].replace(".mp4", ".png")}`}
           />
         ) : (
           <img
@@ -91,16 +93,18 @@ function ShowCaseModal({ project, setProject }) {
             return image.endsWith(".mp4") ? (
               <video
                 key={index}
-                className={`max-w-13 h-10 rounded-sm cursor-pointer object-cover inline-block filter ${
+                className={`max-w-13 min-w-8 max-h-15 min-h-10 rounded-sm cursor-pointer object-cover inline-block filter ${
                   index === currImgIndex ? "brightness-100" : "brightness-50"
                 }`}
                 onClick={() => shiftIndex(index)}
                 src={`/assets/${image}`}
+                preload="metadata"
+                poster={`/assets/${images[currImgIndex].replace(".mp4", ".png")}`}
               ></video>
             ) : (
               <img
                 key={index}
-                className={`max-w-13 h-10 rounded-sm cursor-pointer object-cover inline-block filter ${
+                className={`max-w-13 min-w-8 max-h-15 min-h-10 rounded-sm cursor-pointer object-cover inline-block filter ${
                   index === currImgIndex ? "brightness-100" : "brightness-70"
                 }`}
                 onClick={() => shiftIndex(index)}
