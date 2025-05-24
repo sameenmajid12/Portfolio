@@ -13,4 +13,4 @@ This is my personal portfolio website showcasing my experience, projects, and sk
 Feel free to connect with me!  
 - **Email:** samin.raiyan1@gmail.com  
 - **LinkedIn:** [https://www.linkedin.com/in/sameen-majid-8b31591ba/](#)  
-- **GitHub:** [https://github.com/Saminraiyan12](#)  
+
