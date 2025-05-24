@@ -11,7 +11,7 @@ function Footer() {
           <i className="cursor-pointer fa-brands fa-linkedin"></i>
         </a>
         <a
-          href="https://www.github.com/Saminraiyan12"
+          href="https://www.github.com/sameenmajid12"
           target="_blank"
           rel="noopener noreferrer"
         >
