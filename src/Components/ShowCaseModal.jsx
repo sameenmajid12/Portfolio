@@ -82,6 +82,7 @@ function ShowCaseModal({ project, setProject }) {
       <div className="w-[100vw] md:w-auto absolute top-[50%] right-[50%] transform -translate-y-1/2 translate-x-1/2">
         {images[currImgIndex].endsWith(".mp4") ? (
           <video
+            onClick={(e) => e.stopPropagation()}
             className="max-w-[100vw] md:max-w-[70vw] max-h-[80dvh] object-contain mx-auto"
             src={`/assets/${images[currImgIndex]}`}
             controls
