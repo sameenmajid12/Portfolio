@@ -30,7 +30,7 @@ const experiences = [
       "Google APIS",
       "Resend",
     ],
-    externalLink: "https://deerect.net/",
+    externalLink: "https://www.figma.com/design/2cUvTHQvlIEi3CFNNQsd9k/Deerect-2.0?t=TtesUzlPHJK5Lpl9-0",
   },
   {
     date: "Nov 2024 - Present",

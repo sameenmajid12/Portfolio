@@ -46,9 +46,22 @@ function ShowCaseModal({ project, setProject }) {
       }
     }
   };
-
+  const handleClick = (e) => {
+    const clickX = e.clientX;
+    const screenWidth = window.innerWidth;
+    if (clickX < screenWidth / 2) {
+      shiftIndex((currImgIndex - 1 + images.length) % images.length);
+    } else {
+      shiftIndex(currImgIndex + 1);
+    }
+  };
   return (
-    <div className="fixed top-0 right-0 left-0 bottom-0 bg-[rgba(0,0,0,0.55)] z-200 h-[100dvh]">
+    <div
+      className="fixed top-0 right-0 left-0 bottom-0 bg-[rgba(0,0,0,0.55)] z-200 h-[100dvh]"
+      onClick={handleClick}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <i
         onClick={() => setProject({ isVisible: false, data: null })}
         className="fa-solid fa-circle-xmark absolute right-5 top-5 text-2xl text-white cursor-pointer"
@@ -66,11 +79,7 @@ function ShowCaseModal({ project, setProject }) {
         ></i>
       </div>
 
-      <div
-        className="w-[100vw] md:w-auto absolute top-[50%] right-[50%] transform -translate-y-1/2 translate-x-1/2"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
+      <div className="w-[100vw] md:w-auto absolute top-[50%] right-[50%] transform -translate-y-1/2 translate-x-1/2">
         {images[currImgIndex].endsWith(".mp4") ? (
           <video
             className="max-w-[100vw] md:max-w-[70vw] max-h-[80dvh] object-contain mx-auto"
@@ -99,7 +108,10 @@ function ShowCaseModal({ project, setProject }) {
                 onClick={() => shiftIndex(index)}
                 src={`/assets/${image}`}
                 preload="metadata"
-                poster={`/assets/${images[currImgIndex].replace(".mp4", ".png")}`}
+                poster={`/assets/${images[currImgIndex].replace(
+                  ".mp4",
+                  ".png"
+                )}`}
               ></video>
             ) : (
               <img
