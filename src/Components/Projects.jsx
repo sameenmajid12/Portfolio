@@ -136,11 +136,8 @@ const projects = [
   },
 ];
 
-function Projects() {
-  const [showCaseProject, setShowCaseProject] = useState({
-    isVisible: false,
-    data: null,
-  });
+function Projects({showcaseProject, setShowcaseProject}) {
+  
   return (
     <section
       id="projects"
@@ -160,7 +157,7 @@ function Projects() {
           <div
             key={index}
             onClick={() =>
-              setShowCaseProject({ isVisible: true, data: project })
+              setShowcaseProject({ isVisible: true, data: project })
             }
           >
             <div
@@ -244,10 +241,10 @@ function Projects() {
         </a>
       </motion.div>
       </div>
-      {showCaseProject.isVisible && (
+      {showcaseProject.isVisible && (
         <ShowCaseModal
-          project={showCaseProject}
-          setProject={setShowCaseProject}
+          project={showcaseProject}
+          setProject={setShowcaseProject}
         />
       )}
     </section>
