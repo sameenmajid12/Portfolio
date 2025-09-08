@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-function Home({ scrollToSection }) {
+function Home() {
   const [particles, setParticles] = useState([]);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function Home({ scrollToSection }) {
 
     generateParticles();
   }, []);
-  
+
   return (
     <section
       id="home"
@@ -53,25 +53,29 @@ function Home({ scrollToSection }) {
           </h2>
         </div>
         <div className="flex gap-x-[clamp(0.625rem,1.5vw,1rem)] justify-center">
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(6rem,10vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
+          <a
+            href="https://www.linkedin.com/in/sameen-majid-8b31591ba"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Projects
-          </button>
-
-          <button
-            onClick={() => scrollToSection("experience")}
-            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(6rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
+            <button className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(6rem,10vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150">
+              Linkedin
+            </button>
+          </a>
+          <a
+            href="https://github.com/sameenmajid12"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Experience
-          </button>
-          <button
-            onClick={() => scrollToSection("skills")}
-            className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(6rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150"
-          >
-            Skills
-          </button>
+            <button className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(6rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150">
+              Github
+            </button>
+          </a>
+          <a href="/assets/Sameen_Resume.pdf" target="_blank">
+            <button className="cursor-pointer text-[clamp(0.625rem,1.5vw,0.875rem)] rounded-full shadow-xl w-[clamp(6rem,15vw,10.625rem)] h-[clamp(2.125rem,3vw,2.5rem)] bg-primary text-white  hover:bg-black hover: transition-all duration-150">
+              Resume
+            </button>
+          </a>
         </div>
       </div>
       <div className="h-full w-full  md:order-2 order-1">
