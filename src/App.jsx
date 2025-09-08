@@ -9,6 +9,10 @@ import Footer from "./Components/Footer";
 
 function App() {
   const [windowTop, setWindowTop] = useState(true);
+  const [showCaseProject, setShowCaseProject] = useState({
+    isVisible: false,
+    data: null,
+  });
   const [active, setActive] = useState("");
   const changeThemeColor = (color) => {
     let metaThemeColor = document.querySelector("meta[name=theme-color]");
@@ -64,9 +68,9 @@ function App() {
       });
     }
   };
-  useEffect(()=>{
+  useEffect(() => {
     console.log(active);
-  },[active]);
+  }, [active]);
   return (
     <div className={`flex-col relative min-h-screen pt-[72px]`}>
       <Header
@@ -78,8 +82,8 @@ function App() {
         setActive={setActive}
       />
       <Home scrollToSection={scrollToSection} />
-      <Projects />
-      <Experience />
+      <Experience showcaseProject={showCaseProject} setShowcaseProject={setShowCaseProject}/>
+      <Projects showcaseProject={showCaseProject} setShowcaseProject={setShowCaseProject}/>
       <Skills />
       <Footer />
     </div>
