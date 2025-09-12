@@ -27,7 +27,7 @@ const projects = [
       "UI/UX Design",
       "REST APIs",
     ],
-    status: "In Progress",
+    status: "Completed",
     link: "https://github.com/sameenmajid12/Lume",
   },
   {
@@ -55,7 +55,7 @@ const projects = [
       "REST APIs",
       "AWS",
     ],
-    status: "In Progress",
+    status: "Completed",
     link: "https://github.com/sameenmajid12/NestFrames-Backend",
     showCaseImages: [
       "nestFrames1.png",
