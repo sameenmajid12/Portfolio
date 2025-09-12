@@ -3,11 +3,11 @@ import "../index.css";
 import HeaderMenu from "./HeaderMenu";
 function Header({ windowTop, scrollToSection, checkActive, changeThemeColor }) {
   const [menuVisibility, setMenuVisibility] = useState(false);
-  useEffect(()=>{
-    if(windowTop){
-      changeThemeColor(menuVisibility?'#fff':'#efefef')
+  useEffect(() => {
+    if (windowTop) {
+      changeThemeColor(menuVisibility ? "#fff" : "#efefef");
     }
-  },[menuVisibility])
+  }, [menuVisibility]);
   const toggleMenu = () => {
     setMenuVisibility((prev) => !prev);
   };
@@ -23,7 +23,10 @@ function Header({ windowTop, scrollToSection, checkActive, changeThemeColor }) {
             : "absolute top-0 left-0 z-110 shadow-none bg-transparent"
         }`}
       >
-        <img className="w-auto h-[clamp(1.25rem,1.5vw,1.5rem)]" src="/assets/logo.png"></img>
+        <img
+          className="w-auto h-[clamp(1.25rem,1.5vw,1.5rem)]"
+          src="/assets/logo.png"
+        ></img>
         <div className="text-primary hidden md:flex text-l gap-x-5">
           <div
             className={`relative cursor-pointer ${
@@ -33,6 +36,14 @@ function Header({ windowTop, scrollToSection, checkActive, changeThemeColor }) {
             <a onClick={() => scrollToSection("home")}>Home</a>
 
             {checkActive("home") ? selectorLine : ""}
+          </div>
+          <div
+            className={`relative cursor-pointer ${
+              checkActive("experience") ? "font-bold" : ""
+            }`}
+          >
+            <a onClick={() => scrollToSection("experience")}>Experience</a>
+            {checkActive("experience") ? selectorLine : ""}
           </div>
           <div
             className={` relative cursor-pointer ${
@@ -45,14 +56,6 @@ function Header({ windowTop, scrollToSection, checkActive, changeThemeColor }) {
           </div>
           <div
             className={`relative cursor-pointer ${
-              checkActive("experience") ? "font-bold" : ""
-            }`}
-          >
-            <a onClick={() => scrollToSection("experience")}>Experience</a>
-            {checkActive("experience") ? selectorLine : ""}
-          </div>
-          <div
-            className={`relative cursor-pointer ${
               checkActive("skills") ? "font-bold" : ""
             }`}
           >
@@ -60,14 +63,17 @@ function Header({ windowTop, scrollToSection, checkActive, changeThemeColor }) {
             {checkActive("skills") ? selectorLine : ""}
           </div>
         </div>
-        <div
-         
-          className="cursor-pointer inline md:hidden text-xl text-[#313131] hover:text-[#6F6F6F]"
-        >
-          <i  onClick={toggleMenu} className="fa-solid fa-bars"></i>
+        <div className="cursor-pointer inline md:hidden text-xl text-[#313131] hover:text-[#6F6F6F]">
+          <i onClick={toggleMenu} className="fa-solid fa-bars"></i>
         </div>
       </div>
-      {menuVisibility && <HeaderMenu toggleVisibility={toggleMenu} scrollToSection={scrollToSection} checkActive={checkActive}/>}
+      {menuVisibility && (
+        <HeaderMenu
+          toggleVisibility={toggleMenu}
+          scrollToSection={scrollToSection}
+          checkActive={checkActive}
+        />
+      )}
     </>
   );
 }
