@@ -1,7 +1,36 @@
-import { useState, useEffect } from "react";
-function Home() {
-  const [particles, setParticles] = useState([]);
+import { useState, useEffect, useRef } from "react";
 
+function Home() {
+  const [ready, setReady] = useState(false);
+  const [particles, setParticles] = useState([]);
+  const [paddingBottom, setPaddingBottom] = useState(0);
+  const [paddingTop, setPaddingTop] = useState(0);
+  const homeRef = useRef(null);
+
+  useEffect(() => {
+    const updatePadding = () => {
+      if (!homeRef.current) return;
+
+      const width = window.innerWidth;
+      const style = window.getComputedStyle(homeRef.current);
+      const height =
+        homeRef.current.scrollHeight -
+        parseFloat(style.paddingTop) -
+        parseFloat(style.paddingBottom);
+
+      if (width < 768) {
+        const heightDiff = window.innerHeight - height - 72;
+        setPaddingBottom((heightDiff * 2) / 3);
+        setPaddingTop((heightDiff * 1) / 3);
+      } else {
+        setPaddingBottom(150);
+        setPaddingTop(12);
+      }
+      setReady(true);
+    };
+
+    updatePadding();
+  }, []);
   useEffect(() => {
     const generateParticles = () => {
       const newParticles = Array.from({ length: 35 }).map((_, i) => ({
@@ -20,7 +49,12 @@ function Home() {
   return (
     <section
       id="home"
-      className="flex flex-col relative md:flex-row sidePadding pt-3 pb-3 w-full min-h-[calc(100svh-var(--header-height))] pb-[calc(72px+78px)] gap-x-5 items-center justify-center md:justify-start gap-y-7 "
+      ref={homeRef}
+      style={{
+        paddingBottom: `${paddingBottom}px`,
+        paddingTop: `${paddingTop}px`,
+      }}
+      className={`flex flex-col relative md:flex-row sidePadding w-full md:min-h-[calc(100svh-var(--header-height))] gap-x-5 items-center justify-center md:justify-start gap-y-7 `}
     >
       <div className="absolute top-0 bottom-0 right-0 left-0 pointer-events-none z-0">
         {particles.map((particle) => (
@@ -37,7 +71,11 @@ function Home() {
           ></div>
         ))}
       </div>
-      <div className="flex-col flex gap-y-7  md:order-1 order-2">
+      <div
+        className={`flex-col flex gap-y-7  md:order-1 order-2 transition-opacity duration-1000 ease-in-out ${
+          ready ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <div className="flex-col">
           <div className="w-full flex justify-center md:justify-start">
             <div className="w-max relative text-6xl font-bold">
@@ -78,7 +116,11 @@ function Home() {
           </a>
         </div>
       </div>
-      <div className="h-full w-full  md:order-2 order-1">
+      <div
+        className={`h-full w-full  md:order-2 order-1 transition-opacity duration-1000 ease-in-out ${
+          ready ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <div className="flex justify-center md:justify-end">
           <img
             className="w-[clamp(15rem,25vw,26.875rem)] rounded-full z-100"
