@@ -1,8 +1,34 @@
 import { motion } from "framer-motion";
-import {useState} from 'react';
+import { useState } from "react";
 import ShowCaseModal from "./ShowCaseModal";
 
 const projects = [
+  {
+    title: "QNotes",
+    description: (
+      <>
+        QNotes is an <strong>AI-powered</strong> learning platform that turns
+        dense financial filings into{" "}
+        <strong>structured, interactive study notes</strong>. Users can generate
+        AI summaries with
+        <strong> definitions, learning modes, and guided practice</strong> for
+        10-Qs, 10-Ks, and other SEC filings, making financial analysis faster,
+        clearer, and easier to learn.
+      </>
+    ),
+    imageUrl: "/assets/qnotesSS.png",
+    logoUrl: "/assets/qnotesLogo.png",
+    externalLink: "https://devpost.com/software/qnotes",
+    tools: [
+      "React",
+      "Python",
+      "Supabase",
+      "Figma",
+      "Gemini API",
+    ],
+    status: "2nd place winner HackRU Fall 2025",
+    link: "https://github.com/sameenmajid12/Lume",
+  },
   {
     title: "Lume",
     description: (
@@ -19,52 +45,17 @@ const projects = [
     logoUrl: "/assets/LumeLogo.png",
     showCaseImages: ["lume1.png", "lume2.png", "lume3.png"],
     tools: [
-      "React.js",
+      "React",
       "Express.js",
       "Node.js",
       "MongoDB",
       "Figma",
-      "UI/UX Design",
       "REST APIs",
     ],
-    status: "Completed",
+    status: "Development paused",
     link: "https://github.com/sameenmajid12/Lume",
   },
-  {
-    title: "NestFrames",
-    description: (
-      <>
-        A <strong>social media web app for collaborative group albums</strong>,
-        letting users{" "}
-        <strong>create, share, and manage albums with friends</strong>. With{" "}
-        <strong>real-time messaging and notifications</strong>, users stay
-        connected through updates, tags, and comments. Customizable profiles
-        make sharing seamless, fostering a community-driven experience built
-        around shared memories.
-      </>
-    ),
-    imageUrl: "/assets/NestFramesSS.png",
-    logoUrl: "/assets/NestFramesLogo.png",
-    tools: [
-      "React.js",
-      "Express.js",
-      "Node.js",
-      "MongoDB",
-      "Websockets",
-      "UI/UX Design",
-      "REST APIs",
-      "AWS",
-    ],
-    status: "Completed",
-    link: "https://github.com/sameenmajid12/NestFrames-Backend",
-    showCaseImages: [
-      "nestFrames1.png",
-      "NestFramesSS.png",
-      "nestFrames2.png",
-      "nestFrames3.png",
-      "nestFrames4.png",
-    ],
-  },
+
   {
     title: "BrainTap",
     description: (
@@ -73,14 +64,18 @@ const projects = [
         <strong>recall and sequencing skills</strong>. Players flip cards to
         reveal numbers and <strong>tap them in the correct order</strong>.
         BrainTap features a <strong>clean UI</strong>, smooth animations, and
-        uses <strong>React Native MMKV</strong> for fast and efficient local
+        uses <strong>React Native</strong> for fast and efficient local
         storage.
       </>
     ),
     imageUrl: "/assets/BrainTap.png",
     logoUrl: "/assets/BrainTapLogo.png",
     showCaseImages: ["brainTap1.png", "brainTap2.mp4"],
-    tools: ["React Native", "JavaScript", "React Native MMKV", "UI/UX Design", "Figma"],
+    tools: [
+      "React Native",
+      "JavaScript",
+      "Figma",
+    ],
     status: "Completed",
     link: "https://github.com/sameenmajid12/BrainTap",
   },
@@ -99,14 +94,48 @@ const projects = [
     ),
     imageUrl: "/assets/goalTrack.png",
     logoUrl: "/assets/goalTrackLogo.png",
-    showCaseImages: [
-      "goalTrack1.png",
-      "goalTrack2.png",
-      "goalTrack3.png",
+    showCaseImages: ["goalTrack1.png", "goalTrack2.png", "goalTrack3.png"],
+    tools: [
+      "React Native",
+      "Javascript",
+      "Figma",
     ],
-    tools: ["React Native", "Mobile App Development", "UI/UX Design", "Javascript", "Figma"],
     status: "Completed",
     link: "https://github.com/sameenmajid12/",
+  },
+  {
+    title: "NestFrames",
+    description: (
+      <>
+        A <strong>social media web app for collaborative group albums</strong>,
+        letting users{" "}
+        <strong>create, share, and manage albums with friends</strong>. With{" "}
+        <strong>real-time messaging and notifications</strong>, users stay
+        connected through updates, tags, and comments. Customizable profiles
+        make sharing seamless, fostering a community-driven experience built
+        around shared memories.
+      </>
+    ),
+    imageUrl: "/assets/NestFramesSS.png",
+    logoUrl: "/assets/NestFramesLogo.png",
+    tools: [
+      "React",
+      "Express.js",
+      "Node.js",
+      "MongoDB",
+      "Websockets",
+      "REST APIs",
+      "AWS",
+    ],
+    status: "Development paused",
+    link: "https://github.com/sameenmajid12/NestFrames-Backend",
+    showCaseImages: [
+      "nestFrames1.png",
+      "NestFramesSS.png",
+      "nestFrames2.png",
+      "nestFrames3.png",
+      "nestFrames4.png",
+    ],
   },
   {
     title: "InterModal",
@@ -136,8 +165,7 @@ const projects = [
   },
 ];
 
-function Projects({showcaseProject, setShowcaseProject}) {
-  
+function Projects({ showcaseProject, setShowcaseProject }) {
   return (
     <section
       id="projects"
@@ -154,11 +182,16 @@ function Projects({showcaseProject, setShowcaseProject}) {
 
       <div className="flex flex-col gap-y-10 ">
         {projects.map((project, index) => (
-          <div
+          <a
+            href={project.externalLink}
+            target="_blank"
+            rel="noopener noreferrer"
             key={index}
-            onClick={() =>
-              setShowcaseProject({ isVisible: true, data: project })
-            }
+            onClick={() => {
+              !project.externalLink
+                ? setShowcaseProject({ isVisible: true, data: project })
+                : null;
+            }}
           >
             <div
               key={project.title}
@@ -218,28 +251,28 @@ function Projects({showcaseProject, setShowcaseProject}) {
                 {project.status}
               </motion.span>
             </div>
-          </div>
+          </a>
         ))}
-       <motion.div
-        initial={{ translateX: "-5dvw", opacity: 0 }}
-        whileInView={{ translateX: "0", opacity: 1 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true, amount: 1 }}
-        style={{ willChange: "opacity" }}
-      >
-        <a
-          href="https://www.github.com/sameenmajid12"
-          target="_blank"
-          rel="noopener noreferrer"
+        <motion.div
+          initial={{ translateX: "-5dvw", opacity: 0 }}
+          whileInView={{ translateX: "0", opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true, amount: 1 }}
+          style={{ willChange: "opacity" }}
         >
-          <div className="flex justify-center flex-col md:flex-row gap-y-2 w-full items-center gap-x-3 group cursor-pointer">
-            <p className="font-bold text-[#313131] md:text-[#6F6F6F] text-center text-[clamp(0.875rem,1.5vw,1rem)] group-hover:text-[#313131]">
-              Curious how I built these? Checkout my Github!
-            </p>
-            <i className="fa-brands fa-github text-[clamp(1.125rem,1.5vw,1.5rem)] text-red md:text-[#FFc3c3] group-hover:text-red"></i>
-          </div>
-        </a>
-      </motion.div>
+          <a
+            href="https://www.github.com/sameenmajid12"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex justify-center flex-col md:flex-row gap-y-2 w-full items-center gap-x-3 group cursor-pointer">
+              <p className="font-bold text-[#313131] md:text-[#6F6F6F] text-center text-[clamp(0.875rem,1.5vw,1rem)] group-hover:text-[#313131]">
+                Curious how I built these? Checkout my Github!
+              </p>
+              <i className="fa-brands fa-github text-[clamp(1.125rem,1.5vw,1.5rem)] text-red md:text-[#FFc3c3] group-hover:text-red"></i>
+            </div>
+          </a>
+        </motion.div>
       </div>
       {showcaseProject.isVisible && (
         <ShowCaseModal

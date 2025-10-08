@@ -5,7 +5,6 @@ const experiences = [
     date: "May 2025 - Present",
     role: "Founder & Developer",
     company: "Nito",
-    //companyLogo: "/assets/deerectlogo.png",
     description: (
       <>
         Conceptualized and engineered a <strong>React Native</strong> mobile app
@@ -30,16 +29,7 @@ const experiences = [
       "Node.js",
       "Express.js",
     ],
-    showCaseImages: [
-      "nito1.png",
-      "nito2.png",
-      "nito3.png",
-      "nito4.png",
-      "nito5.png",
-      "nito6.png",
-      "nito7.png",
-      "nito8.jpeg",
-    ],
+    externalLink: "https://nito-app.com",
   },
   {
     date: "Apr 2025 - Present",
@@ -128,14 +118,7 @@ function Experience({ showcaseProject, setShowcaseProject }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div
-                onClick={() => {
-                  if (experience.showCaseImages) {
-                    setShowcaseProject({ isVisible: true, data: experience });
-                  }
-                }}
-                className="bg-white w-full py-5 px-5 flex [@media(max-width:1200px)]:flex-col gap-x-5 rounded-2xl hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all cursor-pointer  "
-              >
+              <div className="bg-white w-full py-5 px-5 flex [@media(max-width:1200px)]:flex-col gap-x-5 rounded-2xl hover:shadow-md hover:bg-[rgba(255,255,255,0.5)] transition-all cursor-pointer  ">
                 <p className="text-[clamp(0.875rem,1.5vw,1.25rem)] whitespace-nowrap ">
                   {experience.date}
                 </p>
