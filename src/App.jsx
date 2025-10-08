@@ -38,6 +38,7 @@ function App() {
     changeThemeColor(windowTop ? "#efefef" : "#FFF");
   }, [windowTop]);
   useEffect(() => {
+    if(!loading) return;
   const preventDefault = (e) => e.preventDefault();
   const preventKeys = (e) => {
     const keys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "];
