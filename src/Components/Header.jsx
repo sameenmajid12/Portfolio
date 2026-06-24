@@ -27,7 +27,7 @@ function Header({ windowTop, scrollToSection, checkActive, changeThemeColor }) {
           className="w-auto h-[clamp(1.25rem,1.5vw,1.5rem)]"
           src="/assets/logo.png"
         ></img>
-        <div className="text-primary hidden md:flex text-l gap-x-5">
+        <div className="text-primary hidden md:flex text-l gap-x-5 flex items-center">
           <div
             className={`relative cursor-pointer ${
               checkActive("home") ? "font-bold" : ""
